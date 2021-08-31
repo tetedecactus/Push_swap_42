@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/19 15:07:30 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:06:06 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ int         stack_size_calculator(int argc, char *argv[]);
 int         if_digit_duplicate(char *argv[], int stack_size);
 int         if_array_is_digit(char **argv, int stack_size);
 int         if_valid_args(char *argv[], int stack_size);
+
+// Create stack function
+
 
 // Error message function
 void        error_message();
