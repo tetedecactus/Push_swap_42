@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/01 10:38:44 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/01 13:03:06 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,19 @@
 typedef struct s_stack_element
 {
     int data;
+    struct s_stack_element *prev;
     struct s_stack_element *next;
 }   t_stack_element;
+
+typedef struct s_array
+{
+    t_stack_element *head;
+    t_stack_element *tail;
+    int stack_size;
+    int *array_a;
+    int *array_b;
+    int *array_tempo;
+}   t_array;
 
 /* 
 * ---Check stack function---
@@ -39,7 +50,7 @@ int         if_valid_args(char *argv[], int stack_size);
 // Create stack function
 
 // Create and print array
-void create_n_print_array(char *argv[], int stack_size);
+int *create_n_print_array(char *argv[], int stack_size);
 
 // Error message function
 void        error_message();
