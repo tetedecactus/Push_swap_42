@@ -37,5 +37,5 @@ int main(int argc, char *argv[])
         printf("free\n");
     }
     print_string(argv, stack_size);
-    printf("fin\n"); 
+    printf("\nfin\n"); 
 }

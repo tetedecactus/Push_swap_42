@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void print_string(char **argv, int stack_size)
+void print_string(char *argv[], int stack_size)
 {
     int i;
 
@@ -8,6 +8,7 @@ void print_string(char **argv, int stack_size)
     while (i < stack_size)
     {
         ft_putstr(argv[i]);
+        write(1, ",", 1);
         i++;
     }
 }

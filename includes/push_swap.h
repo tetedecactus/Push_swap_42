@@ -39,7 +39,7 @@ int         if_valid_args(char *argv[], int stack_size);
 // Create stack function
 
 // Print string
-void print_string(char **argv, int stack_size);
+void print_string(char *argv[], int stack_size);
 
 // Error message function
 void        error_message();
