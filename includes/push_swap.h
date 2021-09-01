@@ -38,6 +38,8 @@ int         if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
 
+// Print string
+void print_string(char **argv, int stack_size);
 
 // Error message function
 void        error_message();
@@ -46,6 +48,7 @@ void        error_message();
 void	    ft_putstr_fd(char *s, int fd);
 long	    ft_atol(const char *str);
 int	        ft_isdigit(int c);
+void        ft_putstr(char *str);
 
 // ft_split function
 char	    **ft_split(char const *s, char c);

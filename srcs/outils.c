@@ -54,3 +54,9 @@ int	ft_isdigit(int c)
 {
 	return ((c >= '0' && c <= '9'));
 }
+
+void ft_putstr(char *str)
+{
+	write(1, &*str, (sizeof(str) / sizeof(char)));
+}
+

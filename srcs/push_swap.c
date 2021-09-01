@@ -12,11 +12,12 @@
 
 #include "../includes/push_swap.h"
 
+
+
 int main(int argc, char *argv[])
 {
     int stack_size;
     int free_me;
-    int if_duplicate;
     
     argv++;
     if (argc < 2)
@@ -35,5 +36,6 @@ int main(int argc, char *argv[])
         free_argv(argv);
         printf("free\n");
     }
+    print_string(argv, stack_size);
     printf("fin\n"); 
 }
