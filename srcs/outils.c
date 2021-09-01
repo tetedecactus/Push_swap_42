@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:48:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/12 14:05:28 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/01 10:18:43 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,26 @@ int	ft_isdigit(int c)
 	return ((c >= '0' && c <= '9'));
 }
 
-void ft_putstr(char *str)
+void    ft_putchar(char c)
 {
-	write(1, &*str, (sizeof(str) / sizeof(char)));
+    write(1, &c, 1);
 }
 
+void       ft_putnbr(int nb)
+{
+    unsigned int nombre;
+
+    if (nb < 0)
+    {
+        ft_putchar('-');
+        nombre = -nb;
+    }
+    else
+        nombre = nb;
+    if (nombre > 9)
+    {
+        ft_putnbr(nombre / 10);
+        nombre %= 10;
+    }
+    ft_putchar(nombre + '0');
+}

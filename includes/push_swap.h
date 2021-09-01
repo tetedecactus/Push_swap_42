@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/31 11:06:06 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/01 10:38:44 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int         if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
 
-// Print string
-void print_string(char *argv[], int stack_size);
+// Create and print array
+void create_n_print_array(char *argv[], int stack_size);
 
 // Error message function
 void        error_message();
@@ -48,7 +48,8 @@ void        error_message();
 void	    ft_putstr_fd(char *s, int fd);
 long	    ft_atol(const char *str);
 int	        ft_isdigit(int c);
-void        ft_putstr(char *str);
+void        ft_putchar(char c);
+void	    ft_putnbr(int nb);
 
 // ft_split function
 char	    **ft_split(char const *s, char c);
@@ -57,6 +58,6 @@ int	        ft_num_of_chars(char const *s2, char c, int i);
 int	        ft_num_of_lines(char const *s1, char c);
 
 // free argument function 
-void	    free_argv(char *argv[]);
+void	free_argv(char *argv[]);
 
 #endif

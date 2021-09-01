@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/19 11:01:30 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/01 11:36:52 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
     stack_size = stack_size_calculator(argc, argv);
     printf("stack = %d\n", stack_size);
     if_valid_args(argv, stack_size);
+    create_n_print_array(argv, stack_size);
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
-    print_string(argv, stack_size);
-    printf("\nfin\n"); 
+    printf("fin\n"); 
 }
