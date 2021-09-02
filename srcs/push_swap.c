@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/01 12:58:07 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/01 13:08:46 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_array     init_struct_array(int stack_size)
 
 int main(int argc, char *argv[])
 {
-    t_array tab;
+    //t_array tab;
     int stack_size;
     int free_me;
     int *array_a;
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     }
     stack_size = stack_size_calculator(argc, argv);
     printf("stack = %d\n", stack_size);
-    //tab = init_struct_array(stack_size);
+    init_struct_array(stack_size);
     if_valid_args(argv, stack_size);
     create_n_print_array(argv, stack_size);
     if (free_me)
