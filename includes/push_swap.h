@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/01 13:03:06 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/04 13:21:36 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ int	        ft_num_of_lines(char const *s1, char c);
 
 // free argument function 
 void	free_argv(char *argv[]);
+
+// move function
+void swap(t_stack_element *head);
+void rotate(t_stack_element *head, t_stack_element *tail);
+void r_rotate(t_stack_element *head, t_stack_element *tail);
 
 #endif
