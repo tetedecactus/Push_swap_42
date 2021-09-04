@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
     if_valid_args(argv, stack_size);
     printf ("array =");
     create_n_print_array(argv, stack_size);
-    stack_a = create_stack(stack_size, argv);
-   print_stack(stack_a);
+    //stack_a = create_stack(stack_size, argv);
+    //print_stack(stack_a);
     if (free_me)
     {
         free_argv(argv);

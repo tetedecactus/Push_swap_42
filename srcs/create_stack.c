@@ -33,7 +33,7 @@ void    print_stack(t_stack *stack)
 {
     t_stack *current = stack; 
     printf("stack a = ");
-    while (current != NULL)
+    while (current->head != NULL)
     {
         printf("%d\n", current->head->data);
         current->head = current->head->next;

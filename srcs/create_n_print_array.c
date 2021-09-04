@@ -41,19 +41,13 @@ int *create_n_print_array(char *argv[], int stack_size)
 {
     int i;
     int *array_a;
-    int *array_b;
-    int *array_tempo;
     
     array_a = malloc(sizeof(int) * stack_size);
-    array_b = malloc(sizeof(int) * stack_size);
-    array_tempo = malloc(sizeof(int) * stack_size);
 
     i = 0;
     while (i < stack_size)
     {
         array_a[i] = ft_atol(argv[i]);
-        array_b[i] = 0;
-        array_tempo[i] = array_a[i];
         i++;
     }
     i = 0;
