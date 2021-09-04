@@ -12,20 +12,8 @@
 
 #include "../includes/push_swap.h"
 
-t_array     init_struct_array(int stack_size)
-{
-    t_array tab;
-    
-    tab.array_a = malloc(sizeof(int) * stack_size);
-    tab.array_b = malloc(sizeof(int) * stack_size);
-    tab.array_tempo = malloc(sizeof(int) * stack_size);
-    
-    return (tab);
-}
-
 int main(int argc, char *argv[])
 {
-    //t_array tab;
     int stack_size;
     int free_me;
     int *array_a;
@@ -40,7 +28,6 @@ int main(int argc, char *argv[])
     }
     stack_size = stack_size_calculator(argc, argv);
     printf("stack = %d\n", stack_size);
-    init_struct_array(stack_size);
     if_valid_args(argv, stack_size);
     create_n_print_array(argv, stack_size);
     if (free_me)
