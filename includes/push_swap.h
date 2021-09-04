@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/04 13:21:36 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/04 14:16:55 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,9 @@ void	free_argv(char *argv[]);
 void swap(t_stack_element *head);
 void rotate(t_stack_element *head, t_stack_element *tail);
 void r_rotate(t_stack_element *head, t_stack_element *tail);
+
+// double linked list function
+void deallocate(t_stack_element **tail, t_stack_element **head);
+void insert_end(t_stack_element **head, int value);
 
 #endif
