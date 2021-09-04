@@ -36,6 +36,6 @@ void    print_stack(t_stack *stack)
     while (current != NULL)
     {
         printf("%d\n", current->head->data);
-        current = current->head->next;
+        current->head = current->head->next;
     }  
 } 
