@@ -54,7 +54,7 @@ t_stack     *create_stack(int stack_size, char *argv[]);
 void        print_stack(t_stack *stack);
 
 // Create and print array
-int         *create_array(char *argv[], int stack_size);
+int        *create_array(char *argv[], int stack_size);
 void        print_array(int *arr, int stack_size);
 
 // Error message function

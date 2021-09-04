@@ -58,6 +58,7 @@ int *create_array(char *argv[], int stack_size)
         i++;
     }
     ft_putchar('\n'); */
+    //print_array(array_a, stack_size);
     return (array_a);
 } 
 

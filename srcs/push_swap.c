@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
     int stack_size;
     int free_me;
-    t_stack *stack_a;
+    //t_stack *stack_a;
     int *arr;
 
     argv++;
@@ -30,10 +30,14 @@ int main(int argc, char *argv[])
     stack_size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_size);
     if_valid_args(argv, stack_size);
-    printf ("array =");
 
+    //arr = malloc(sizeof(stack_size));
+////probeleme//////////
+    //printf ("array =");
     arr = create_array(argv, stack_size);
     print_array(arr, stack_size);
+////probleme 2/////////
+    //printf ("stack =");
     //stack_a = create_stack(stack_size, argv);
     //print_stack(stack_a);
 
@@ -42,6 +46,6 @@ int main(int argc, char *argv[])
         free_argv(argv);
         printf("free\n");
     }
-    //free(struct);
+    free(arr);
     printf("fin\n");
 }
