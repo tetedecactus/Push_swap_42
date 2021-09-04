@@ -42,7 +42,7 @@ int *create_array(char *argv[], int stack_size)
     int i;
     int *array_a;
     
-    array_a = malloc(sizeof(int) * stack_size);
+    //array_a = malloc(sizeof(int) * stack_size);
 
     i = 0;
     while (i < stack_size)
