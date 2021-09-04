@@ -37,7 +37,7 @@
     return (array_a);
 }  */
 
-int *create_n_print_array(char *argv[], int stack_size)
+int *create_array(char *argv[], int stack_size)
 {
     int i;
     int *array_a;
@@ -50,13 +50,27 @@ int *create_n_print_array(char *argv[], int stack_size)
         array_a[i] = ft_atol(argv[i]);
         i++;
     }
-    i = 0;
+   /*  i = 0;
     while(i < stack_size)
     {
         ft_putnbr(array_a[i]);
         ft_putchar(',');
         i++;
     }
-    ft_putchar('\n');
+    ft_putchar('\n'); */
     return (array_a);
 } 
+
+void print_array(int *arr, int stack_size)
+{
+    int i;
+
+    i = 0;
+     while(i < stack_size)
+    {
+        ft_putnbr(arr[i]);
+        ft_putchar(',');
+        i++;
+    }
+    ft_putchar('\n');
+}

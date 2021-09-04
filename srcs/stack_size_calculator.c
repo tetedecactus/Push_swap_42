@@ -66,9 +66,9 @@ int if_array_is_digit(char **argv, int stack_size)
     return (0);
 }
 
-int if_valid_args(char *argv[], int stack_size)
+void if_valid_args(char *argv[], int stack_size)
 {
     if (if_digit_duplicate(argv, stack_size) || if_array_is_digit(argv, stack_size))
         error_message();
-    return (0);
+    //return (0);
 }

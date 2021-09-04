@@ -17,7 +17,7 @@ t_stack     *create_stack(int stack_size, char *argv[])
     int i;
     t_stack *stack_a;
 
-    stack_a = malloc(sizeof(t_stack_node));
+    stack_a = malloc(sizeof(t_stack));
     i = 0;       
     while (i < stack_size)
     {
@@ -26,6 +26,7 @@ t_stack     *create_stack(int stack_size, char *argv[])
         stack_a->head = stack_a->head->next;
     }
     printf("fait");
+    stack_a->tail= NULL;
     return (stack_a);
 }
 

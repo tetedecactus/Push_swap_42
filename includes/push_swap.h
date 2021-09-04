@@ -47,14 +47,15 @@ typedef struct s_stack
 int         stack_size_calculator(int argc, char *argv[]);
 int         if_digit_duplicate(char *argv[], int stack_size);
 int         if_array_is_digit(char **argv, int stack_size);
-int         if_valid_args(char *argv[], int stack_size);
+void        if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
 t_stack     *create_stack(int stack_size, char *argv[]);
 void        print_stack(t_stack *stack);
 
 // Create and print array
-int         *create_n_print_array(char *argv[], int stack_size);
+int         *create_array(char *argv[], int stack_size);
+void        print_array(int *arr, int stack_size);
 
 // Error message function
 void        error_message();
