@@ -12,19 +12,18 @@
 
 #include "../includes/push_swap.h"
 
-/*void create_n_print_array(char *argv[], int stack_size)
+/* void create_n_print_stack(char *argv[], int stack_size)
 {
     int i;
-    int array_a[stack_size];
-    int array_b[stack_size];
-    int array_tempo[stack_size];
+    t_stack *stack_a;
+    t_stack *stack_b;
 
     i = 0;
     while (i < stack_size)
     {
-        array_a[i] = ft_atol(argv[i]);
-        array_b[i] = 0;
-        array_tempo[i] = array_a[i];
+        stack_a->head->data = ft_atol(argv[i]);
+        stack_b->head->data = 0;
+        head = head->next;
         i++;
     }
     i = 0;
@@ -36,7 +35,7 @@
     }
     ft_putchar('\n');
     return (array_a);
-} */
+}  */
 
 int *create_n_print_array(char *argv[], int stack_size)
 {

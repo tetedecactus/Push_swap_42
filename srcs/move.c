@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 /* 
-* swap = sa & sb : swap les 2 "premier" t_stack_element (head n head->prev)
+* swap = sa & sb : swap les 2 "premier" t_stack_node (head n head->prev)
 * rotate = ra & rb : rotate le premier et dernier element (head n tail) 
 * r_rotate = rra & rrb : rotate le dernier et premier element (tail n head)
 */
 
 #include "../includes/push_swap.h"
 
-void swap(t_stack_element *head)
+void swap(t_stack_node *head)
 {
     int temp;
 
@@ -28,7 +28,7 @@ void swap(t_stack_element *head)
     head->prev->data = temp;
 }
 
-void rotate(t_stack_element *head, t_stack_element *tail)
+void rotate(t_stack_node *head, t_stack_node *tail)
 {
     int temp;
 
@@ -38,7 +38,7 @@ void rotate(t_stack_element *head, t_stack_element *tail)
     tail->data = temp;
 }
 
-void r_rotate(t_stack_element *head, t_stack_element *tail)
+void r_rotate(t_stack_node *head, t_stack_node *tail)
 {
     int temp;
 

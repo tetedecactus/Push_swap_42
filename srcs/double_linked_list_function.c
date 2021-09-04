@@ -17,11 +17,11 @@
 
 #include "../includes/push_swap.h"
 
-void insert_end(t_stack_element **head, int value)
+void insert_end(t_stack_node **head, int value)
 {
-    t_stack_element *new_node;
+   t_stack_node *new_node;
     
-    new_node =  malloc(sizeof(t_stack_element));
+    new_node =  malloc(sizeof(t_stack_node));
     if (new_node == NULL)
         exit(1);
     new_node->data = value;
@@ -33,11 +33,11 @@ void insert_end(t_stack_element **head, int value)
     *head = new_node;
 }
 
-void deallocate(t_stack_element **tail, t_stack_element **head)
+void deallocate(t_stack_node **tail,t_stack_node **head)
 {
     if (*tail == NULL)
         return;
-    t_stack_element *curr = *tail;
+   t_stack_node *curr = *tail;
     while (curr->next != NULL)
     {
         curr = curr->next;

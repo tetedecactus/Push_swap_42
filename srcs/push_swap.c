@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 {
     int stack_size;
     int free_me;
-    int *array_a;
-    
+    t_stack *stack_a;
+
     argv++;
     if (argc < 2)
         error_message();
@@ -27,9 +27,12 @@ int main(int argc, char *argv[])
         free_me++;
     }
     stack_size = stack_size_calculator(argc, argv);
-    printf("stack = %d\n", stack_size);
+    printf("stack size = %d\n", stack_size);
     if_valid_args(argv, stack_size);
+    printf ("array =");
     create_n_print_array(argv, stack_size);
+    stack_a = create_stack(stack_size, argv);
+   print_stack(stack_a);
     if (free_me)
     {
         free_argv(argv);

@@ -23,23 +23,19 @@ typedef struct s_stack_element
     int data;
     struct s_stack_element *prev;
     struct s_stack_element *next;
-}   t_stack_element;
-
-typedef struct s_array
-{
-    t_stack_element *head;
-    t_stack_element *tail;
-    int stack_size;
-    int *array_a;
-    int *array_b;
-    int *array_tempo;
-}   t_array;
+}   t_stack_node;
 
 typedef struct s_stack
 {
+    t_stack_node *head;
+    t_stack_node *tail;
+}   t_stack;
+
+/* typedef struct s_stack
+{
     t_array *stack_a;
     t_array *stack_b;
-} t_stack;
+} t_stack; */
 
 /* 
 * ---Check stack function---
@@ -54,9 +50,11 @@ int         if_array_is_digit(char **argv, int stack_size);
 int         if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
+t_stack     *create_stack(int stack_size, char *argv[]);
+void        print_stack(t_stack *stack);
 
 // Create and print array
-int *create_n_print_array(char *argv[], int stack_size);
+int         *create_n_print_array(char *argv[], int stack_size);
 
 // Error message function
 void        error_message();
@@ -75,15 +73,15 @@ int	        ft_num_of_chars(char const *s2, char c, int i);
 int	        ft_num_of_lines(char const *s1, char c);
 
 // free argument function 
-void	free_argv(char *argv[]);
+void	    free_argv(char *argv[]);
 
 // move function
-void swap(t_stack_element *head);
-void rotate(t_stack_element *head, t_stack_element *tail);
-void r_rotate(t_stack_element *head, t_stack_element *tail);
+void        swap(t_stack_node *head);
+void        rotate(t_stack_node *head, t_stack_node *tail);
+void        r_rotate(t_stack_node *head, t_stack_node *tail);
 
 // double linked list function
-void deallocate(t_stack_element **tail, t_stack_element **head);
-void insert_end(t_stack_element **head, int value);
+void        deallocate(t_stack_node **tail, t_stack_node **head);
+void        insert_end(t_stack_node **head, int value);
 
 #endif
