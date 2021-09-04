@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/04 14:23:51 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/04 14:24:56 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_array
 
 typedef struct s_stack
 {
-    t_array *strack_a;
+    t_array *stack_a;
     t_array *stack_b;
 } t_stack;
 
