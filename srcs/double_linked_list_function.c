@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 14:07:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/04 14:26:07 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/05 14:14:44 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "../includes/push_swap.h"
 
-void init_double_linked_list(t_stack_node **tail, t_stack_node ** head, int value)
+void init_double_linked_list(t_stack_node **tail, t_stack_node **head, int value)
 {
     t_stack_node *new_node = malloc(sizeof(t_stack_node));
     if (new_node == NULL)

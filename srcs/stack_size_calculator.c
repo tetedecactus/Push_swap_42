@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 11:00:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/19 10:59:12 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/05 12:10:33 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,4 @@ void if_valid_args(char *argv[], int stack_size)
 {
     if (if_digit_duplicate(argv, stack_size) || if_array_is_digit(argv, stack_size))
         error_message();
-    //return (0);
 }

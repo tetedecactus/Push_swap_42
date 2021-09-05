@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/04 14:24:56 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/05 13:32:19 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 #include <stdlib.h>
 #include <limits.h>
 
-typedef struct s_stack_element
+typedef struct s_stack_node
 {
     int data;
-    struct s_stack_element *prev;
-    struct s_stack_element *next;
+    struct s_stack_node *prev;
+    struct s_stack_node *next;
+
 }   t_stack_node;
 
 typedef struct s_stack
@@ -56,6 +57,7 @@ void        print_stack(t_stack *stack);
 // Create and print array
 int        *create_array(char *argv[], int stack_size);
 void        print_array(int *arr, int stack_size);
+t_stack     *init_stack(void);
 
 // Error message function
 void        error_message();
@@ -73,15 +75,15 @@ static char	**ft_array(char const *s, char **dst, char c, int l);
 int	        ft_num_of_chars(char const *s2, char c, int i);
 int	        ft_num_of_lines(char const *s1, char c);
 
-// free argument function 
+// Free argument function 
 void	    free_argv(char *argv[]);
 
-// move function
+// Move function
 void        swap(t_stack_node *head);
 void        rotate(t_stack_node *head, t_stack_node *tail);
 void        r_rotate(t_stack_node *head, t_stack_node *tail);
 
-// double linked list function
+// Double linked list function
 void        deallocate(t_stack_node **tail, t_stack_node **head);
 void        insert_end(t_stack_node **head, int value);
 
