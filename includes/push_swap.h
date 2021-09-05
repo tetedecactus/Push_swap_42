@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 13:32:19 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/05 14:18:55 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_stack_node
     int data;
     struct s_stack_node *prev;
     struct s_stack_node *next;
-
 }   t_stack_node;
 
 typedef struct s_stack

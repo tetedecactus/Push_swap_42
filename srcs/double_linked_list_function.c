@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 14:07:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 14:14:44 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/05 14:59:59 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,34 @@ void deallocate(t_stack_node **tail,t_stack_node **head)
     *tail = NULL;
     *head = NULL;
 }
+
+// fonction provenant du dossier practice, a besoin d'etre adapter
+// pour eventuellement remplacer insert_end
+/* List push_back_list(List li, int x)
+{
+    ListElement *element;     // cree un nouvelle element de la liste
+
+    element = malloc(sizeof(*element));
+
+    if (element == NULL)
+    {
+        fprintf(stderr, " Erreur : probleme allocation dynamique. \n");
+        exit(EXIT_FAILURE);
+    }
+
+    element->value = x;       //on met x dans la variable value
+    element->next = NULL;
+
+    if (is_empty_list(li))
+        return (element);
+
+    ListElement *temp;
+    temp = li;
+
+    while (temp->next != NULL)
+        temp = temp->next;
+
+    temp->next = element;
+
+    return (li);
+} */
