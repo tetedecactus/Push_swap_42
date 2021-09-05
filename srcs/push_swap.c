@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     //t_stack *stack_a;
     int *arr;
 
+    //stack_a = malloc(sizeof(t_stack_node));
     argv++;
     if (argc < 2)
         error_message();

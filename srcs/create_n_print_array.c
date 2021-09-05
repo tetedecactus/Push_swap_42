@@ -12,31 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-/* void create_n_print_stack(char *argv[], int stack_size)
-{
-    int i;
-    t_stack *stack_a;
-    t_stack *stack_b;
-
-    i = 0;
-    while (i < stack_size)
-    {
-        stack_a->head->data = ft_atol(argv[i]);
-        stack_b->head->data = 0;
-        head = head->next;
-        i++;
-    }
-    i = 0;
-    while(i < stack_size)
-    {
-        ft_putnbr(array_a[i]);
-        ft_putchar(',');
-        i++;
-    }
-    ft_putchar('\n');
-    return (array_a);
-}  */
-
 int *create_array(char *argv[], int stack_size)
 {
     int i;
@@ -58,20 +33,20 @@ int *create_array(char *argv[], int stack_size)
         i++;
     }
     ft_putchar('\n'); */
-    //print_array(array_a, stack_size);
-    return (array_a);
-} 
+    print_array(array_a, stack_size);
+    //return (array_a);
+}  
 
 void print_array(int *arr, int stack_size)
 {
     int i;
 
     i = 0;
-     while(i < stack_size)
+    while(i < stack_size)
     {
         ft_putnbr(arr[i]);
         ft_putchar(',');
         i++;
     }
     ft_putchar('\n');
-}
+} 
