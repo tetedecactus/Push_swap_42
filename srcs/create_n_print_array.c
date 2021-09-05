@@ -17,7 +17,7 @@ int *create_array(char *argv[], int stack_size)
     int i;
     int *array_a;
     
-    //array_a = malloc(sizeof(int) * stack_size);
+    array_a = malloc(sizeof(int) * stack_size);
 
     i = 0;
     while (i < stack_size)
@@ -33,8 +33,8 @@ int *create_array(char *argv[], int stack_size)
         i++;
     }
     ft_putchar('\n'); */
-    print_array(array_a, stack_size);
-    //return (array_a);
+    //print_array(array_a, stack_size);
+    return (array_a);
 }  
 
 void print_array(int *arr, int stack_size)
@@ -42,6 +42,7 @@ void print_array(int *arr, int stack_size)
     int i;
 
     i = 0;
+    //arr = malloc(sizeof(int) * stack_size);
     while(i < stack_size)
     {
         ft_putnbr(arr[i]);
@@ -49,4 +50,5 @@ void print_array(int *arr, int stack_size)
         i++;
     }
     ft_putchar('\n');
+    //free(arr);
 } 

@@ -32,11 +32,11 @@ int main(int argc, char *argv[])
     printf("stack size = %d\n", stack_size);
     if_valid_args(argv, stack_size);
 
-    //arr = malloc(sizeof(stack_size));
-////probeleme//////////
     printf ("array =");
-    /* arr =   */create_array(argv, stack_size);
-    //print_array(arr, stack_size);
+    arr = malloc(sizeof(int) * stack_size);
+////probeleme//////////
+    arr = create_array(argv, stack_size);
+    print_array(arr, stack_size);
 ////probleme 2/////////
     //printf ("stack =");
     //stack_a = create_stack(stack_size, argv);

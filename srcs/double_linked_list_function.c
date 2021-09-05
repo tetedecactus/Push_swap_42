@@ -17,6 +17,19 @@
 
 #include "../includes/push_swap.h"
 
+void init_double_linked_list(t_stack_node **tail, t_stack_node ** head, int value)
+{
+    t_stack_node *new_node = malloc(sizeof(t_stack_node));
+    if (new_node == NULL)
+        exit(1);
+    new_node->data = value;
+    new_node->prev = NULL;
+    new_node->next = NULL;
+
+    *tail = new_node;
+    *head = new_node;
+}
+
 void insert_end(t_stack_node **head, int value)
 {
    t_stack_node *new_node;
