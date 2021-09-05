@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 
     //arr = malloc(sizeof(stack_size));
 ////probeleme//////////
-    //printf ("array =");
-    arr = create_array(argv, stack_size);
-    print_array(arr, stack_size);
+    printf ("array =");
+    /* arr =   */create_array(argv, stack_size);
+    //print_array(arr, stack_size);
 ////probleme 2/////////
     //printf ("stack =");
     //stack_a = create_stack(stack_size, argv);
@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
         free_argv(argv);
         printf("free\n");
     }
-    free(arr);
+    //free(arr);
     printf("fin\n");
 }
