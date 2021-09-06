@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:33:12 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:38:27 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	        free_argv(char *argv[]);
 void            swap(t_stack_node *head);
 void            rotate(t_stack_node *head, t_stack_node *tail);
 void            r_rotate(t_stack_node *head, t_stack_node *tail);
+void            push(t_stack_node *head_a, t_stack_node *head_b);
 
 // Double linked list function
 void            deallocate(t_stack_node **tail, t_stack_node **head);
@@ -84,8 +85,5 @@ t_stack_node	*find_last_node(t_stack_node *node);
 void            insert_end(t_stack_node **head, t_stack_node *new_head);
 t_stack_node    *new_node_init(void *data);
 void            free_stack(t_stack_node *head);
-void	        ft_lstdelone(t_stack_node *lst, void (*del)(void*));
-void	        ft_lstclear(t_stack_node **lst, void (*del)(void*));
-
 
 #endif
