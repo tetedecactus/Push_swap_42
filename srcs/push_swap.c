@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 11:31:48 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:32:10 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,13 @@ int main(int argc, char *argv[])
     stack_b = create_stack_b(stack_size, argv);
     print_stack(stack_a);
     print_stack(stack_b);
-
-    
-    
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
+    free_stack(stack_a->head);
+    free_stack(stack_b->head);
     //free(stack_a);
     printf("fin\n");
 }

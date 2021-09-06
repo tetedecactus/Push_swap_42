@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 09:50:31 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 12:34:37 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 11:59:53 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int *create_array(char *argv[], int stack_size)
     int i;
     int *array_a;
     
-    array_a = malloc(sizeof(char) * stack_size);
+    array_a = malloc(sizeof(char) * stack_size - 1);
 
     i = 0;
     while (i < stack_size)

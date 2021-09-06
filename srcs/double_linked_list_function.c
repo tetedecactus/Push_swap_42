@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 14:07:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 14:59:59 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:33:24 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,42 @@ t_stack_node *new_node_init(void *data)
     new_node->next = NULL;
 
     return (new_node);
+}
+
+void	ft_lstdelone(t_stack_node *lst, void (*del)(void*))
+{
+	if (!del || !lst)
+		return ;
+	if (lst)
+	{
+		(*del)(lst->data);
+		free(lst);
+	}
+}
+
+void	ft_lstclear(t_stack_node **lst, void (*del)(void*))
+{
+	t_stack_node	*clear;
+
+	if (!lst || !*lst || !del)
+		return ;
+	while (lst && *lst)
+	{
+		clear = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = clear;
+	}
+}
+
+void free_stack(t_stack_node *head)
+{
+    t_stack_node *next;
+
+    if (head != NULL)
+    {
+        next =  head->next;
+        free(head->data);
+        free(head);
+        free_stack(next);
+    }
 }
