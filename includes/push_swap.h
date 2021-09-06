@@ -79,7 +79,7 @@ void            r_rotate(t_stack_node *head, t_stack_node *tail);
 
 // Double linked list function
 void            deallocate(t_stack_node **tail, t_stack_node **head);
-void            insert_end(t_stack_node **head, t_stack_node *node);
+void            insert_end(t_stack_node **head, t_stack_node *new_head);
 t_stack_node	*find_last_node(t_stack_node *node);
 t_stack_node    *new_node_init(void *data);
 

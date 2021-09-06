@@ -48,9 +48,6 @@ void    print_stack(t_stack *stack)
     }  
 } 
 
-
-
-
     // while (i < stack_size)
     // {
     //     tmp_stack = stack_a->next;

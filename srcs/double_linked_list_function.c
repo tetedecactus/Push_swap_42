@@ -44,20 +44,20 @@ t_stack_node	*find_last_node(t_stack_node *node)
 	return (node);
 }
 
-void  insert_end(t_stack_node **head, t_stack_node *node)
+void  insert_end(t_stack_node **head, t_stack_node *new_head)
 {
-    t_stack_node *stack;
+    t_stack_node *node;
 
     if (head != NULL)
     {
-        if (*head)
+        if (*head != NULL)
         {
-            stack = find_last_node(*head);
-            stack->next = node;
-            node->prev = stack;
+            node = find_last_node(*head);
+            node->next = new_head;
+            new_head->prev = node;
         }
         else
-            *head = node;
+            *head = new_head;
     }
 }
 

@@ -52,19 +52,9 @@ int main(int argc, char *argv[])
     ft_putstr_fd("array = ", 1);
     arr = create_array(argv, stack_size);
     print_array(arr, stack_size);
-
-
-
-    ////probleme 2///////// create stack probleme
     ft_putstr_fd("stack = ", 1);
-    stack_a = create_stack(stack_size, argv);
-    //printf("%d,", stack_a->head->data);
-    print_stack(stack_a);
-
-
-
-
-
+        stack_a = create_stack(stack_size, argv);
+        print_stack(stack_a);
     if (free_me)
     {
         free_argv(argv);
