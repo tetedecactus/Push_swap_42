@@ -17,35 +17,6 @@
 
 #include "../includes/push_swap.h"
 
-void init_double_linked_list(t_stack_node **tail, t_stack_node **head, int value)
-{
-    t_stack_node *new_node = malloc(sizeof(t_stack_node));
-    if (new_node == NULL)
-        exit(1);
-    new_node->data = value;
-    new_node->prev = NULL;
-    new_node->next = NULL;
-
-    *tail = new_node;
-    *head = new_node;
-}
-
-void insert_end(t_stack_node **head, int value)
-{
-   t_stack_node *new_node;
-    
-    new_node =  malloc(sizeof(t_stack_node));
-    if (new_node == NULL)
-        exit(1);
-    new_node->data = value;
-    new_node->next = NULL;
-    new_node->prev = *head;
-    //
-    if (*head != NULL)
-        (*head)->next = new_node;
-    *head = new_node;
-}
-
 void deallocate(t_stack_node **tail,t_stack_node **head)
 {
     if (*tail == NULL)
@@ -62,33 +33,45 @@ void deallocate(t_stack_node **tail,t_stack_node **head)
     *head = NULL;
 }
 
-// fonction provenant du dossier practice, a besoin d'etre adapter
-// pour eventuellement remplacer insert_end
-/* List push_back_list(List li, int x)
+t_stack_node	*find_last_node(t_stack_node *node)
 {
-    ListElement *element;     // cree un nouvelle element de la liste
+	while (node)
+	{
+		if (node->next == NULL)
+			return (node);
+		node = node->next;
+	}
+	return (node);
+}
 
-    element = malloc(sizeof(*element));
+void  insert_end(t_stack_node **head, t_stack_node *node)
+{
+    t_stack_node *stack;
 
-    if (element == NULL)
+    if (head != NULL)
     {
-        fprintf(stderr, " Erreur : probleme allocation dynamique. \n");
-        exit(EXIT_FAILURE);
+        if (*head)
+        {
+            stack = find_last_node(*head);
+            stack->next = node;
+            node->prev = stack;
+        }
+        else
+            *head = node;
     }
+}
 
-    element->value = x;       //on met x dans la variable value
-    element->next = NULL;
+// ft_lstnew de la libft up grape pour double linked list
+t_stack_node *new_node_init(void *data)
+{
+    t_stack_node *new_node;
 
-    if (is_empty_list(li))
-        return (element);
+    new_node = malloc(sizeof(t_stack_node));
+    if (new_node == NULL)
+        return (NULL);
+    new_node->data = data;
+    new_node->prev = NULL;
+    new_node->next = NULL;
 
-    ListElement *temp;
-    temp = li;
-
-    while (temp->next != NULL)
-        temp = temp->next;
-
-    temp->next = element;
-
-    return (li);
-} */
+    return (new_node);
+}

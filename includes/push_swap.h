@@ -20,22 +20,17 @@
 
 typedef struct s_stack_node
 {
-    int data;
+    //void *data;
+    int                 data;
     struct s_stack_node *prev;
     struct s_stack_node *next;
 }   t_stack_node;
 
 typedef struct s_stack
 {
-    t_stack_node *head;
-    t_stack_node *tail;
+    t_stack_node        *head;
+    t_stack_node        *tail;
 }   t_stack;
-
-/* typedef struct s_stack
-{
-    t_array *stack_a;
-    t_array *stack_b;
-} t_stack; */
 
 /* 
 * ---Check stack function---
@@ -44,46 +39,48 @@ typedef struct s_stack
 * 3. Reguarde si il y a autre chose que des chiffres
 * 4. Check de fonction 2 & 3 ensemble
 */
-int         stack_size_calculator(int argc, char *argv[]);
-int         if_digit_duplicate(char *argv[], int stack_size);
-int         if_array_is_digit(char **argv, int stack_size);
-void        if_valid_args(char *argv[], int stack_size);
+int             stack_size_calculator(int argc, char *argv[]);
+int             if_digit_duplicate(char *argv[], int stack_size);
+int             if_array_is_digit(char **argv, int stack_size);
+void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
-t_stack     *create_stack(int stack_size, char *argv[]);
-void        print_stack(t_stack *stack);
+t_stack         *create_stack(int stack_size, char *argv[]);
+void            print_stack(t_stack *stack);
 
 // Create and print array
-int        *create_array(char *argv[], int stack_size);
-void        print_array(int *arr, int stack_size);
-t_stack     *init_stack(void);
+int             *create_array(char *argv[], int stack_size);
+void            print_array(int *arr, int stack_size);
+t_stack         *init_stack(void);
 
 // Error message function
-void        error_message();
+void            error_message();
 
 // Outils function (fonction de ma libft)
-void	    ft_putstr_fd(char *s, int fd);
-long	    ft_atol(const char *str);
-int	        ft_isdigit(int c);
-void        ft_putchar(char c);
-void	    ft_putnbr(int nb);
+void	        ft_putstr_fd(char *s, int fd);
+long	        ft_atol(const char *str);
+int	            ft_isdigit(int c);
+void            ft_putchar(char c);
+void	        ft_putnbr(int nb);
 
 // ft_split function
-char	    **ft_split(char const *s, char c);
-static char	**ft_array(char const *s, char **dst, char c, int l);
-int	        ft_num_of_chars(char const *s2, char c, int i);
-int	        ft_num_of_lines(char const *s1, char c);
+char	        **ft_split(char const *s, char c);
+static char 	**ft_array(char const *s, char **dst, char c, int l);
+int	            ft_num_of_chars(char const *s2, char c, int i);
+int	            ft_num_of_lines(char const *s1, char c);
 
 // Free argument function 
-void	    free_argv(char *argv[]);
+void	        free_argv(char *argv[]);
 
 // Move function
-void        swap(t_stack_node *head);
-void        rotate(t_stack_node *head, t_stack_node *tail);
-void        r_rotate(t_stack_node *head, t_stack_node *tail);
+void            swap(t_stack_node *head);
+void            rotate(t_stack_node *head, t_stack_node *tail);
+void            r_rotate(t_stack_node *head, t_stack_node *tail);
 
 // Double linked list function
-void        deallocate(t_stack_node **tail, t_stack_node **head);
-void        insert_end(t_stack_node **head, int value);
+void            deallocate(t_stack_node **tail, t_stack_node **head);
+void            insert_end(t_stack_node **head, t_stack_node *node);
+t_stack_node	*find_last_node(t_stack_node *node);
+t_stack_node    *new_node_init(void *data);
 
 #endif
