@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/04 14:03:27 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 09:35:36 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 #include "../includes/push_swap.h"
 
-/* void swap(t_stack_node *head)
+void swap(t_stack_node *head)
 {
-    int temp;
+    void *temp;
 
     temp = 0;
     temp = head->data;
@@ -30,7 +30,7 @@
 
 void rotate(t_stack_node *head, t_stack_node *tail)
 {
-    int temp;
+    void *temp;
 
     temp = 0;
     temp = head->data;
@@ -40,10 +40,10 @@ void rotate(t_stack_node *head, t_stack_node *tail)
 
 void r_rotate(t_stack_node *head, t_stack_node *tail)
 {
-    int temp;
+    void *temp;
 
     temp = 0;
     temp = tail->data;
     tail->data = head->data;
     head->data = temp;
-} */
+}

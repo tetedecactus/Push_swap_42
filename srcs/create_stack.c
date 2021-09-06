@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:06:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 14:53:54 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 11:34:48 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack *init_stack(void)
     return (stack);
 }
 
-t_stack *create_stack(int stack_size, char *argv[])
+t_stack *create_stack_a(int stack_size, char *argv[])
 {
     int i;
     t_stack *stack_a;
@@ -34,22 +34,32 @@ t_stack *create_stack(int stack_size, char *argv[])
         insert_end(&stack_a->head, new_node_init((void *)ft_atol(argv[i])));
         i++;
     }
-    printf("\n");
     return (stack_a);
+}
+
+t_stack         *create_stack_b(int stack_size, char *argv[])
+{
+     int i;
+    t_stack *stack_b;
+    
+    stack_b = init_stack();
+    i = 0;
+    while (i < stack_size)
+    {
+        insert_end(&stack_b->head, new_node_init(0));
+        i++;
+    }
+    return (stack_b);
 }
 
 void    print_stack(t_stack *stack)
 {
-    printf("stack a = ");
+    ft_putstr_fd("stack = ", 1);
     while (stack->head != NULL)
     {
-        printf("--> %lu", (long )stack->head->data);
+        ft_putnbr((long )stack->head->data);
+        ft_putchar(',');
         stack->head = stack->head->next;
-    }  
+    }
+    ft_putchar('\n');
 } 
-
-    // while (i < stack_size)
-    // {
-    //     tmp_stack = stack_a->next;
-    //     tmp_stack = insert_node(ft_atoi(argv[i]));
-    // }

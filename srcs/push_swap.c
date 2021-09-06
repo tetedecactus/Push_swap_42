@@ -6,29 +6,11 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 13:49:52 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 11:31:48 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-t_stack *init_stack_a(void)
-{
-    t_stack *stack_a;
-
-    stack_a->head = NULL;
-    stack_a->tail = NULL;
-    return (stack_a);
-}
-
-t_stack *init_stack_b(void)
-{
-    t_stack *stack_b;
-
-    stack_b->head = NULL;
-    stack_b->tail = NULL;
-    return (stack_b);
-}
 
 int main(int argc, char *argv[])
 {
@@ -36,8 +18,12 @@ int main(int argc, char *argv[])
     int free_me;
     int *arr;
     t_stack *stack_a;
+    t_stack *stack_b;
+    
 
+    free_me = 0;
     stack_a = malloc(sizeof(t_stack));
+    stack_b = malloc(sizeof(t_stack));
     argv++;
     if (argc < 2)
         error_message();
@@ -46,20 +32,28 @@ int main(int argc, char *argv[])
         argv = ft_split(argv[0], ' ');
         free_me++;
     }
+    //stack size
     stack_size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_size);
+    //valid arg
     if_valid_args(argv, stack_size);
+    //create n print array
     ft_putstr_fd("array = ", 1);
     arr = create_array(argv, stack_size);
     print_array(arr, stack_size);
-    ft_putstr_fd("stack = ", 1);
-        stack_a = create_stack(stack_size, argv);
-        print_stack(stack_a);
+    //create n print stack a & b
+    stack_a = create_stack_a(stack_size, argv);
+    stack_b = create_stack_b(stack_size, argv);
+    print_stack(stack_a);
+    print_stack(stack_b);
+
+    
+    
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
-    //free(arr);
+    //free(stack_a);
     printf("fin\n");
 }
