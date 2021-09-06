@@ -18,7 +18,7 @@
 
 #include "../includes/push_swap.h"
 
-void swap(t_stack_node *head)
+/* void swap(t_stack_node *head)
 {
     int temp;
 
@@ -46,4 +46,4 @@ void r_rotate(t_stack_node *head, t_stack_node *tail)
     temp = tail->data;
     tail->data = head->data;
     head->data = temp;
-}
+} */

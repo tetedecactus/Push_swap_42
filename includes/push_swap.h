@@ -20,8 +20,8 @@
 
 typedef struct s_stack_node
 {
-    //void *data;
-    int                 data;
+    void *data;
+    //int                 data;
     struct s_stack_node *prev;
     struct s_stack_node *next;
 }   t_stack_node;
