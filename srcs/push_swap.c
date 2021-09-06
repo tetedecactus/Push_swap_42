@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 15:23:31 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 16:02:45 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ int main(int argc, char *argv[])
     write(1, "\n", 1);
     ft_putnbr((long )stack_a->head->next->prev->data);
     write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->data);
+    ft_putnbr((long )stack_a->head->next->next->prev->prev->data);
     write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->data);
+    ft_putnbr((long )stack_a->head->next->next->next->prev->prev->prev->data);
     write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->next->data);
+    ft_putnbr((long )stack_a->head->next->next->next->next->prev->prev->prev->prev->data);
     write(1, "\n", 1);
     
     ft_putnbr((long )stack_a->head->data);
