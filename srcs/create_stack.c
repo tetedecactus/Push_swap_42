@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:06:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 14:34:41 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 15:25:41 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void    print_stack(t_stack *stack)
         ft_putnbr((long )stack->head->data);
         ft_putchar(',');
         stack->head = stack->head->next;
-    }
+    }   
     ft_putchar('\n');
 } 
