@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:32:10 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 14:53:29 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,15 @@ int main(int argc, char *argv[])
     //create n print stack a & b
     stack_a = create_stack_a(stack_size, argv);
     stack_b = create_stack_b(stack_size, argv);
+    ft_putnbr((long )stack_a->head->data);
+    print_stack(stack_a);
+    ft_putnbr((long )stack_a->head->data);
+    print_stack(stack_b);
+    
     print_stack(stack_a);
     print_stack(stack_b);
+   
+        
     if (free_me)
     {
         free_argv(argv);

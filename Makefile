@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/09/06 12:51:16 by olabrecq          #+#    #+#              #
+#    Updated: 2021/09/06 14:49:40 by olabrecq         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 
 SRCS = 	./srcs/create_n_print_array.c \
@@ -20,3 +32,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean re all
+
+make: 
+		./push_swap 212 75 45 34 23

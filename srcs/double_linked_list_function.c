@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 14:07:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:37:15 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 14:55:34 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,6 @@
 */
 
 #include "../includes/push_swap.h"
-
-void deallocate(t_stack_node **tail,t_stack_node **head)
-{
-    if (*tail == NULL)
-        return;
-   t_stack_node *curr = *tail;
-    while (curr->next != NULL)
-    {
-        curr = curr->next;
-        free(curr->prev);
-    }
-    free(curr);
-    
-    *tail = NULL;
-    *head = NULL;
-}
 
 t_stack_node	*find_last_node(t_stack_node *node)
 {
@@ -47,7 +31,7 @@ t_stack_node	*find_last_node(t_stack_node *node)
 void  insert_end(t_stack_node **head, t_stack_node *new_head)
 {
     t_stack_node *node;
-
+    
     if (head != NULL)
     {
         if (*head != NULL)

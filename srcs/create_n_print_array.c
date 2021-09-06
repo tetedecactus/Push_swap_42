@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 09:50:31 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 11:59:53 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 13:51:56 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void print_array(int *arr, int stack_size)
         ft_putchar(',');
         i++;
     }
+    free(arr);
     ft_putchar('\n');
 } 

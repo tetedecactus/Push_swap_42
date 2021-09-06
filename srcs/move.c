@@ -6,17 +6,28 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:09:23 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:40:42 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* 
+* push = pa & pb : swap les 2 head de stack a & stack b
 * swap = sa & sb : swap les 2 "premier" t_stack_node (head n head->prev)
 * rotate = ra & rb : rotate le premier et dernier element (head n tail) 
 * r_rotate = rra & rrb : rotate le dernier et premier element (tail n head)
 */
 
 #include "../includes/push_swap.h"
+
+void push(t_stack_node *head_a, t_stack_node *head_b)
+{
+    void *temp;
+
+    temp = 0;
+    temp = head_a->data;
+    head_a->data = head_b->data;
+    head_b->data = temp;
+}
 
 void swap(t_stack_node *head)
 {
@@ -46,14 +57,4 @@ void r_rotate(t_stack_node *head, t_stack_node *tail)
     temp = tail->data;
     tail->data = head->data;
     head->data = temp;
-}
-
-void push(t_stack_node *head_a, t_stack_node *head_b)
-{
-    void *temp;
-
-    temp = 0;
-    temp = head_a->data;
-    head_a->data = head_b->data;
-    head_b->data = temp;
 }
