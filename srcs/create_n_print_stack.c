@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:06:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/07 13:53:33 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:47:13 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack *init_stack(void)
     return (stack);
 }
 
-t_stack *create_stack_a(int stack_size, char *argv[])
+t_stack *create_stack(int stack_size, char *argv[])
 {
     int i;
     t_stack *stack_a;
@@ -34,10 +34,15 @@ t_stack *create_stack_a(int stack_size, char *argv[])
         insert_end(&stack_a->head, new_node_init(ft_atoi(argv[i])));
         i++;
     }
+    stack_a->tail = stack_a->head;
+    while (stack_a->tail->next != NULL)
+    {
+        stack_a->tail = stack_a->tail->next;
+    }
     return (stack_a);
 }
 
-t_stack         *create_stack_b(int stack_size, char *argv[])
+/* t_stack         *create_stack_b(int stack_size, char *argv[])
 {
      int i;
     t_stack *stack_b;
@@ -49,8 +54,13 @@ t_stack         *create_stack_b(int stack_size, char *argv[])
         insert_end(&stack_b->head, new_node_init(0));
         i++;
     }
+    stack_b->tail = stack_b->head;
+    while (stack_b->tail->next != NULL)
+    {
+        stack_b->tail = stack_b->tail->next;
+    }
     return (stack_b);
-}
+} */
 
 void    print_stack(t_stack *stack)
 {

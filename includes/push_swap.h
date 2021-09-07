@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/07 15:05:43 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:47:08 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int             if_array_is_digit(char **argv, int stack_size);
 void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
-t_stack         *create_stack_a(int stack_size, char *argv[]);
+t_stack         *create_stack(int stack_size, char *argv[]);
 t_stack         *create_stack_b(int stack_size, char *argv[]);
 void            print_stack(t_stack *stack);
 
