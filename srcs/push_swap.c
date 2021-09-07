@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/07 09:38:14 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:03:48 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
     
 
     free_me = 0;
-    stack_a = malloc(sizeof(t_stack));
-    stack_b = malloc(sizeof(t_stack));
+    /* stack_a = malloc(sizeof(t_stack));
+    stack_b = malloc(sizeof(t_stack)); */
     argv++;
     if (argc < 2)
         error_message();
@@ -45,43 +45,42 @@ int main(int argc, char *argv[])
     stack_a = create_stack_a(stack_size, argv);
     stack_b = create_stack_b(stack_size, argv);
     
-    ft_putnbr((long )stack_a->head->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->prev->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->prev->prev->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->prev->prev->prev->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->next->prev->prev->prev->prev->data);
-    write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->prev->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->prev->prev->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->next->prev->prev->prev->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->next->next->prev->prev->prev->prev->data);
+    // write(1, "\n", 1);
     
-    ft_putnbr((long )stack_a->head->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->data);
-    write(1, "\n", 1);
-    ft_putnbr((long )stack_a->head->next->next->next->next->data);
-    write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->next->data);
+    // write(1, "\n", 1);
+    // ft_putnbr((long )stack_a->head->next->next->next->next->data);
+    // write(1, "\n", 1);
     print_stack(stack_a);
     print_stack(stack_b);
     
-    print_stack(stack_a);
-    print_stack(stack_b);
-    print_stack(stack_a);
-    print_stack(stack_b);
-    print_stack(stack_a);
-    print_stack(stack_b);
+    // print_stack(stack_a);
+    // print_stack(stack_b);
+    // print_stack(stack_a);
+    // print_stack(stack_b);
+    // print_stack(stack_a);
+    // print_stack(stack_b);
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
-    // free_stack(stack_a->head);
-    // free_stack(stack_b->head);
+    deallocate(&stack_a, &stack_b);
     //free(stack_a);
     printf("fin\n");
 }

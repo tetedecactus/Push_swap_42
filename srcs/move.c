@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:40:42 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 13:54:29 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void push(t_stack_node *head_a, t_stack_node *head_b)
 {
-    void *temp;
+    int temp;
 
     temp = 0;
     temp = head_a->data;
@@ -31,7 +31,7 @@ void push(t_stack_node *head_a, t_stack_node *head_b)
 
 void swap(t_stack_node *head)
 {
-    void *temp;
+    int temp;
 
     temp = 0;
     temp = head->data;
@@ -41,7 +41,7 @@ void swap(t_stack_node *head)
 
 void rotate(t_stack_node *head, t_stack_node *tail)
 {
-    void *temp;
+    int temp;
 
     temp = 0;
     temp = head->data;
@@ -51,7 +51,7 @@ void rotate(t_stack_node *head, t_stack_node *tail)
 
 void r_rotate(t_stack_node *head, t_stack_node *tail)
 {
-    void *temp;
+    int temp;
 
     temp = 0;
     temp = tail->data;

@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 12:42:13 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:05:43 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 
 typedef struct s_stack_node
 {
-    void *data;
-    //int                 data;
+    int                 data;
     struct s_stack_node *prev;
     struct s_stack_node *next;
 }   t_stack_node;
@@ -59,7 +58,7 @@ void            error_message();
 
 // Outils function (fonction de ma libft)
 void	        ft_putstr_fd(char *s, int fd);
-long	        ft_atol(const char *str);
+int	            ft_atoi(const char *str);
 int	            ft_isdigit(int c);
 void            ft_putchar(char c);
 void	        ft_putnbr(int nb);
@@ -82,7 +81,7 @@ void            push(t_stack_node *head_a, t_stack_node *head_b);
 // Double linked list function
 t_stack_node	*find_last_node(t_stack_node *node);
 void            insert_end(t_stack_node **head, t_stack_node *new_head);
-t_stack_node    *new_node_init(void *data);
-void            free_stack(t_stack_node *head);
+t_stack_node    *new_node_init(int data);
+void            deallocate(t_stack **tail, t_stack **head);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 09:50:31 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 13:51:56 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 13:53:46 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int *create_array(char *argv[], int stack_size)
     i = 0;
     while (i < stack_size)
     {
-        array_a[i] = ft_atol(argv[i]);
+        array_a[i] = ft_atoi(argv[i]);
         i++;
     }
     return (array_a);

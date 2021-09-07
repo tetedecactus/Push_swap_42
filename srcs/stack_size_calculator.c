@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 11:00:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/05 12:10:33 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 13:52:26 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int if_digit_duplicate(char *argv[], int stack_size)
     while(i < stack_size)
     {
         j = i + 1;
-        stack_array = ft_atol(argv[i]);
+        stack_array = ft_atoi(argv[i]);
         while (j < stack_size)
         {
-            if(stack_array == ft_atol(argv[j]))
+            if(stack_array == ft_atoi(argv[j]))
                 return (1);
             j++;
         }

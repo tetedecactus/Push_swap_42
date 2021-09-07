@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 14:07:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 14:55:34 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:08:51 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void  insert_end(t_stack_node **head, t_stack_node *new_head)
 }
 
 // ft_lstnew de la libft up grape pour double linked list
-t_stack_node *new_node_init(void *data)
+t_stack_node *new_node_init(int data)
 {
     t_stack_node *new_node;
 
@@ -60,15 +60,18 @@ t_stack_node *new_node_init(void *data)
     return (new_node);
 }
 
-void free_stack(t_stack_node *head)
+void deallocate(t_stack **tail, t_stack **head)
 {
-    t_stack_node *next;
-
-    if (head != NULL)
+    if (*tail == NULL)
+        return;
+    t_stack *curr = *tail;
+    while (curr->head->next != NULL)
     {
-        next =  head->next;
-        free(head->data);
-        free(head);
-        free_stack(next);
+        curr->head = curr->head->next;
+        free(curr->head->prev);
     }
+    free(curr);
+    
+    *tail = NULL;
+    *head = NULL;
 }

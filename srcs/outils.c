@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:48:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/01 10:18:43 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 13:50:22 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i++], 1);
 }
 
-long	ft_atol(const char *str)
+int	ft_atoi(const char *str)
 {
 	long			num;
 	int				i;
-	long			sign;
+	int				sign;
 
 	sign = 1;
 	i = 0;
