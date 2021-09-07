@@ -42,14 +42,29 @@ void swap(t_stack_node *head)
 
 void rotate(t_stack_node *head, t_stack_node *tail)
 {
-    if (head == NULL || head->next == NULL)
-        return ;
+    // if (head == NULL || head->next == NULL)
+    //     return ;
     t_stack_node *temp;
 
     temp = head;
     head = head->next;
-    
-    
+    head->prev = tail;
+    tail = temp;
+    tail->prev = NULL;
+
+    // temp = head->next;
+    // //head->next = NULL;
+    // head->prev = tail;
+    // //temp->prev = NULL;
+    // tail->next = head;
+    // tail = head;
+    // head = temp;
+    // tail->next = NULL;
+    printf("%d\n", head->data);
+    printf("%d\n", head->next->data);
+    printf("%d\n", head->next->next->data);
+    printf("%d\n", head->next->next->next->data);
+    printf("%d\n", tail->data);
 }
 
 void r_rotate(t_stack_node *head, t_stack_node *tail)
