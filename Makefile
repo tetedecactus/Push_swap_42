@@ -6,7 +6,7 @@
 #    By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/06 12:51:16 by olabrecq          #+#    #+#              #
-#    Updated: 2021/09/06 15:50:48 by olabrecq         ###   ########.fr        #
+#    Updated: 2021/09/07 09:14:56 by olabrecq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,5 +33,5 @@ re: fclean all
 
 .PHONY: clean fclean re all
 
-make: 
+run: 
 		./push_swap 212 75 45 34 23

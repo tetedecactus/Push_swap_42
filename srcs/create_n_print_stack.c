@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:06:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/06 15:58:35 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/07 09:37:49 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,26 @@ t_stack         *create_stack_b(int stack_size, char *argv[])
 
 void    print_stack(t_stack *stack)
 {
+    t_stack *temp;
+    temp = stack;
     ft_putstr_fd("stack = ", 1);
-    while (stack->head != NULL)
+    while (temp->head->next != NULL)
     {
-        ft_putnbr((long )stack->head->data);
+        ft_putnbr((long )temp->head->data);
         ft_putchar(',');
-        stack->head = stack->head->next;
-    }   
-    ft_putnbr((long )stack->head->prev->prev->data);
+        temp->head = temp->head->next;
+    }
+    ft_putnbr((long )temp->head->data);
+        ft_putchar(',');
+
+    //ft_putnbr((long )stack->head->prev->prev->data);
     ft_putchar('\n');
+    while (temp->head->prev != NULL)
+    {
+        temp->head = temp->head->prev;
+    }
+
+
+    
+    
 } 
