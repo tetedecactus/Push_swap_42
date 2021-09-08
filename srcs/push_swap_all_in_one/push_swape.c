@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 10:49:57 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 14:30:04 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:28:13 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -432,6 +432,25 @@ void r_rotate(t_stack *stack_data)
     stack_data->tail->next = NULL; 
 }
 
+void push(t_stack *stack_a, t_stack *stack_b)
+{
+    t_stack_node *futur_head;
+    
+    if (stack_a->head == NULL)
+        return ; 
+    futur_head = stack_a->head;
+    stack_a->head =  stack_a->head->next;
+    if (stack_a->head != NULL)
+        stack_a->head->prev = NULL;
+    futur_head->next = NULL;
+    if (stack_b->head != NULL)
+    {
+        stack_b->head->prev = futur_head;
+        futur_head->next = stack_b->head->next;
+    }
+    stack_b->head = futur_head;
+}
+
 int main(int argc, char *argv[])
 {
     int free_me;
@@ -439,6 +458,7 @@ int main(int argc, char *argv[])
     t_stack *stack_a;
     t_stack *stack_b;
 
+    stack_b =  malloc(sizeof(t_stack));
     free_me = 0;
     argv++;
     if (argc < 2)
@@ -449,6 +469,7 @@ int main(int argc, char *argv[])
         free_me++;
     }
     stack_a = init_stack(argc, argv);
+    stack_b->head = NULL;
     //stack_a->size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_a->size);
     //valid arg
@@ -470,6 +491,10 @@ int main(int argc, char *argv[])
     r_rotate(stack_a);
     print_stack(stack_a);
 
+    push(stack_a, stack_b);
+    print_stack(stack_a);
+    print_stack(stack_b);
+    
     if (free_me)
     {
         free_argv(argv);

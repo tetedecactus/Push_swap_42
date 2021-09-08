@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 13:59:26 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:52:11 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
         free_me++;
     }
     stack_a = init_stack(argc, argv);
+    stack_b->head = NULL;
     //stack_a->size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_a->size);
     //valid arg
@@ -49,6 +50,10 @@ int main(int argc, char *argv[])
     
     r_rotate(stack_a);
     print_stack(stack_a);
+
+    push(stack_a, stack_b);
+    print_stack(stack_a);
+    print_stack(stack_b);
 
     if (free_me)
     {

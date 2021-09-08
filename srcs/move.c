@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 11:04:11 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:34:52 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "../includes/push_swap.h"
 
-void push(t_stack_node *head_a, t_stack_node *head_b)
+void push(t_stack *head_a, t_stack *head_b)
 {
     int temp;
 
@@ -42,8 +42,8 @@ void swap(t_stack_node *head)
 
 void rotate(t_stack *stack_data)
 {
-    // if (stack_data->size < 2)
-    //     return ;
+    if (stack_data->size < 2)
+        return ;
     t_stack_node    *next_head;
         
     next_head = stack_data->head->next;
@@ -63,13 +63,13 @@ void r_rotate(t_stack *stack_data)
          return ;
     t_stack_node    *next_tail;
         
-    next_tail = stack_data->head->next;
-    // shift head to bottom 
-    stack_data->head->next = stack_data->tail;
-    stack_data->tail->prev = stack_data->head;
-    stack_data->tail->next = NULL;
-    stack_data->head = stack_data->head;
-    //make top_next as new head 
+    next_tail = stack_data->tail->prev;
+    // shift tail to head
+    stack_data->head->prev = stack_data->tail;
+    stack_data->tail->next = stack_data->head;
+    stack_data->head->prev = NULL;
+    stack_data->head = stack_data->tail;
+    // make tail_next as new tail
     stack_data->tail = next_tail;
-    stack_data->tail->prev = NULL; 
+    stack_data->tail->next = NULL; 
 }
