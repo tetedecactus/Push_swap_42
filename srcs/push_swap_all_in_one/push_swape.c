@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 10:49:57 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 11:13:50 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 14:30:04 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -422,14 +422,14 @@ void r_rotate(t_stack *stack_data)
     t_stack_node    *next_tail;
         
     next_tail = stack_data->tail->prev;
-    // shift head to bottom 
-    stack_data->tail->next = stack_data->head;
+    // shift tail to head
     stack_data->head->prev = stack_data->tail;
-    stack_data->tail->next = NULL;
-    stack_data->head = stack_data->head;
-    //make top_next as new head 
+    stack_data->tail->next = stack_data->head;
+    stack_data->head->prev = NULL;
+    stack_data->head = stack_data->tail;
+    // make tail_next as new tail
     stack_data->tail = next_tail;
-    stack_data->tail->prev = NULL; 
+    stack_data->tail->next = NULL; 
 }
 
 int main(int argc, char *argv[])

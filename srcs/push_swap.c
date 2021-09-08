@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 10:48:39 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 13:59:26 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int main(int argc, char *argv[])
     print_stack(stack_a);
     
     rotate(stack_a);
+    print_stack(stack_a);
+    
+    r_rotate(stack_a);
     print_stack(stack_a);
 
     if (free_me)
