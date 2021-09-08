@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/07 15:47:08 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 11:04:29 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack
 {
     t_stack_node        *head;
     t_stack_node        *tail;
+    int                 size;
 }   t_stack;
 
 /* 
@@ -44,14 +45,13 @@ int             if_array_is_digit(char **argv, int stack_size);
 void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
-t_stack         *create_stack(int stack_size, char *argv[]);
-t_stack         *create_stack_b(int stack_size, char *argv[]);
+t_stack         *create_stack(int stack_size, char *argv[], t_stack *stack);
 void            print_stack(t_stack *stack);
 
 // Create and print array
 int             *create_array(char *argv[], int stack_size);
 void            print_array(int *arr, int stack_size);
-t_stack         *init_stack(void);
+t_stack         *init_stack(int argc, char *argv[]);
 
 // Error message function
 void            error_message();
@@ -74,8 +74,8 @@ void	        free_argv(char *argv[]);
 
 // Move function
 void            swap(t_stack_node *head);
-void            rotate(t_stack_node *head, t_stack_node *tail);
-void            r_rotate(t_stack_node *head, t_stack_node *tail);
+void            rotate(t_stack *stack_data);
+void            r_rotate(t_stack *stack_data);
 void            push(t_stack_node *head_a, t_stack_node *head_b);
 
 // Double linked list function

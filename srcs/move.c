@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/07 16:20:53 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/08 11:04:11 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,39 +40,36 @@ void swap(t_stack_node *head)
     head->next->data = temp;
 }
 
-void rotate(t_stack_node *head, t_stack_node *tail)
+void rotate(t_stack *stack_data)
 {
-    // if (head == NULL || head->next == NULL)
+    // if (stack_data->size < 2)
     //     return ;
-    t_stack_node *temp;
-
-    temp = head;
-    head = head->next;
-    head->prev = tail;
-    tail = temp;
-    tail->prev = NULL;
-
-    // temp = head->next;
-    // //head->next = NULL;
-    // head->prev = tail;
-    // //temp->prev = NULL;
-    // tail->next = head;
-    // tail = head;
-    // head = temp;
-    // tail->next = NULL;
-    printf("%d\n", head->data);
-    printf("%d\n", head->next->data);
-    printf("%d\n", head->next->next->data);
-    printf("%d\n", head->next->next->next->data);
-    printf("%d\n", tail->data);
+    t_stack_node    *next_head;
+        
+    next_head = stack_data->head->next;
+    // shift head to bottom 
+    stack_data->tail->next = stack_data->head;
+    stack_data->head->prev = stack_data->tail;
+    stack_data->head->next = NULL;
+    stack_data->tail = stack_data->head;
+    //make top_next as new head 
+    stack_data->head = next_head;
+    stack_data->head->prev = NULL; 
 }
 
-void r_rotate(t_stack_node *head, t_stack_node *tail)
+void r_rotate(t_stack *stack_data)
 {
-    int temp;
-
-    temp = 0;
-    temp = tail->data;
-    tail->data = head->data;
-    head->data = temp;
+    if (stack_data->size < 2)
+         return ;
+    t_stack_node    *next_tail;
+        
+    next_tail = stack_data->head->next;
+    // shift head to bottom 
+    stack_data->head->next = stack_data->tail;
+    stack_data->tail->prev = stack_data->head;
+    stack_data->tail->next = NULL;
+    stack_data->head = stack_data->head;
+    //make top_next as new head 
+    stack_data->tail = next_tail;
+    stack_data->tail->prev = NULL; 
 }
