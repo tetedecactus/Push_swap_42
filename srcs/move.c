@@ -19,14 +19,23 @@
 
 #include "../includes/push_swap.h"
 
-void push(t_stack *head_a, t_stack *head_b)
+void push(t_stack *stack_a, t_stack *stack_b)
 {
-    int temp;
-
-    temp = 0;
-    temp = head_a->data;
-    head_a->data = head_b->data;
-    head_b->data = temp;
+    t_stack_node *futur_head;
+    
+    if (stack_a->head == NULL)
+        return ; 
+    futur_head = stack_a->head;
+    stack_a->head =  stack_a->head->next;
+    if (stack_a->head != NULL)
+        stack_a->head->prev = NULL;
+    futur_head->next = NULL;
+    if (stack_b->head != NULL)
+    {
+        stack_b->head->prev = futur_head;
+        futur_head->next = stack_b->head;
+    }
+    stack_b->head = futur_head;
 }
 
 void swap(t_stack_node *head)

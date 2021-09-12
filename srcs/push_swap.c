@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     t_stack *stack_a;
     t_stack *stack_b;
 
+    stack_b = malloc(sizeof(t_stack));
     free_me = 0;
     argv++;
     if (argc < 2)

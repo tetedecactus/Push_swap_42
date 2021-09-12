@@ -70,7 +70,7 @@ int	ft_atoi(const char *str)
 
 int	ft_isdigit(int c)
 {
-	return ((c >= '0' && c <= '9'));
+	return ((c >= '0' && c <= '9' || c == '-'));
 }
 
 void    ft_putchar(char c)
@@ -244,7 +244,7 @@ int if_array_is_digit(char **argv, int stack_size)
     }
     return (0);
 }
-
+ 
 void if_valid_args(char *argv[], int stack_size)
 {
     if (if_digit_duplicate(argv, stack_size) || if_array_is_digit(argv, stack_size))
@@ -446,9 +446,10 @@ void push(t_stack *stack_a, t_stack *stack_b)
     if (stack_b->head != NULL)
     {
         stack_b->head->prev = futur_head;
-        futur_head->next = stack_b->head->next;
+        futur_head->next = stack_b->head;
     }
     stack_b->head = futur_head;
+
 }
 
 int main(int argc, char *argv[])
@@ -494,7 +495,12 @@ int main(int argc, char *argv[])
     push(stack_a, stack_b);
     print_stack(stack_a);
     print_stack(stack_b);
-    
+    push(stack_a, stack_b);
+    print_stack(stack_a);
+    print_stack(stack_b);
+    push(stack_a, stack_b);
+    print_stack(stack_a);
+    print_stack(stack_b);
     if (free_me)
     {
         free_argv(argv);

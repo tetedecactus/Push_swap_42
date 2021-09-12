@@ -76,7 +76,8 @@ void	        free_argv(char *argv[]);
 void            swap(t_stack_node *head);
 void            rotate(t_stack *stack_data);
 void            r_rotate(t_stack *stack_data);
-void            push(t_stack_node *head_a, t_stack_node *head_b);
+void            push(t_stack *stack_a, t_stack *stack_b);
+
 
 // Double linked list function
 t_stack_node	*find_last_node(t_stack_node *node);
