@@ -15,7 +15,8 @@ NAME = push_swap
 SRCS = 	./srcs/create_n_print_array.c \
 		./srcs/create_n_print_stack.c ./srcs/double_linked_list_function.c \
 		./srcs/error_message.c ./srcs/free_arg.c ./srcs/move.c ./srcs/outils.c \
-		./srcs/push_swap.c ./srcs/stack_size_calculator.c ./srcs/ft_split.c 
+		./srcs/push_swap.c ./srcs/stack_size_calculator.c ./srcs/ft_split.c \
+		./srcs/quick_sort.c 
 
 OBJS = ${SRCS:.c=.o}
 CC = gcc 
