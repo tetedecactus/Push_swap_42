@@ -36,10 +36,11 @@ int main(int argc, char *argv[])
     //valid arg
     if_valid_args(argv, stack_a->size);
     //create n print array
-    ft_putstr_fd("array = ", 1);
     arr = create_array(argv, stack_a->size);
+    ft_putstr_fd("array = ", 1);
     print_array(arr, stack_a->size);
     quick_sort(arr, 0, (stack_a->size - 1));
+    ft_putstr_fd("sorted array = ", 1);
     print_array(arr, stack_a->size);
 
     //create n print stack a & b

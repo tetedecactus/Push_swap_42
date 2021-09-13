@@ -23,12 +23,15 @@ void quick_swap(int *a, int *b)
 // low =  arr[0], high = lengh - 1
 int partition(int arr[], int low, int high)
 {
-    int i = low - 1;
-    int j = low;
-    int pivot = arr[high];
+    int i;
+    int j;
+    int pivot;
 
+    j = low;
     while (j <= high - 1)
     {
+        i = (low - 1);
+        pivot = arr[high];
         if (arr[j] < pivot)
         {
             i++;
@@ -42,9 +45,11 @@ int partition(int arr[], int low, int high)
 
 void quick_sort(int arr[], int low, int high)
 {
+    int pi;
+
     if (low < high)
     {
-        int pi = partition(arr, low, high);
+        pi = partition(arr, low, high);
 
         quick_sort(arr, low, pi - 1);
         quick_sort(arr, pi + 1, high);
