@@ -85,4 +85,9 @@ void            insert_end(t_stack_node **head, t_stack_node *new_head);
 t_stack_node    *new_node_init(int data);
 void            deallocate(t_stack **tail, t_stack **head);
 
+// Quick sort function
+void            quick_swap(int *a, int *b);
+int             partition(int *arr, int low, int high);
+void            quick_sort(int *arr, int low, int high);
+
 #endif

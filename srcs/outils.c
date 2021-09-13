@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 
 int	ft_isdigit(int c)
 {
-	return ((c >= '0' && c <= '9'));
+	return ((c >= '0' && c <= '9' || c == '-'));
 }
 
 void    ft_putchar(char c)

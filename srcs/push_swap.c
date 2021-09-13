@@ -39,22 +39,25 @@ int main(int argc, char *argv[])
     ft_putstr_fd("array = ", 1);
     arr = create_array(argv, stack_a->size);
     print_array(arr, stack_a->size);
-    //create n print stack a & b
-    stack_a = create_stack(stack_a->size, argv, stack_a);
-    print_stack(stack_a);
-    
-    swap(stack_a->head);
-    print_stack(stack_a);
-    
-    rotate(stack_a);
-    print_stack(stack_a);
-    
-    r_rotate(stack_a);
-    print_stack(stack_a);
+    quick_sort(arr, 0, stack_a->size - 1);
+    print_array(arr, stack_a->size);
 
-    push(stack_a, stack_b);
-    print_stack(stack_a);
-    print_stack(stack_b);
+    //create n print stack a & b
+    // stack_a = create_stack(stack_a->size, argv, stack_a);
+    // print_stack(stack_a);
+    
+    // swap(stack_a->head);
+    // print_stack(stack_a);
+    
+    // rotate(stack_a);
+    // print_stack(stack_a);
+    
+    // r_rotate(stack_a);
+    // print_stack(stack_a);
+
+    // push(stack_a, stack_b);
+    // print_stack(stack_a);
+    // print_stack(stack_b);
 
     if (free_me)
     {
