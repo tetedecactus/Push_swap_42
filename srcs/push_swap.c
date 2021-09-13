@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     ft_putstr_fd("array = ", 1);
     arr = create_array(argv, stack_a->size);
     print_array(arr, stack_a->size);
-    quick_sort(arr, 0, stack_a->size - 1);
+    quick_sort(arr, 0, (stack_a->size - 1));
     print_array(arr, stack_a->size);
 
     //create n print stack a & b
