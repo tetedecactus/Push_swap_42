@@ -28,9 +28,9 @@ int partition(int arr[], int low, int high)
     int pivot;
 
     j = low;
+    i = (low - 1);
     while (j <= high - 1)
     {
-        i = (low - 1);
         pivot = arr[high];
         if (arr[j] < pivot)
         {
