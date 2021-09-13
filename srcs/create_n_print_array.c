@@ -39,6 +39,5 @@ void print_array(int *arr, int stack_size)
         ft_putchar(',');
         i++;
     }
-    free(arr);
     ft_putchar('\n');
 } 
