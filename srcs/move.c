@@ -6,15 +6,15 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:02:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/08 15:34:52 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/14 15:33:32 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* 
 * push = pa & pb : swap les 2 head de stack a & stack b
 * swap = sa & sb : swap les 2 "premier" t_stack_node (head n head->prev)
-* rotate = ra & rb : rotate le premier et dernier element (head n tail) 
-* r_rotate = rra & rrb : rotate le dernier et premier element (tail n head)
+* rotate = ra & rb : rotate le premier element a la fin (head n tail) 
+* r_rotate = rra & rrb : rotate le dernier element au debut (tail n head)
 */
 
 #include "../includes/push_swap.h"
@@ -49,6 +49,12 @@ void swap(t_stack_node *head)
     head->next->data = temp;
 }
 
+void ss_swap(t_stack_node *head_a, t_stack_node *head_b)
+{
+    swap(head_a);
+    swap(head_b);
+}
+
 void rotate(t_stack *stack_data)
 {
     if (stack_data->size < 2)
@@ -66,6 +72,12 @@ void rotate(t_stack *stack_data)
     stack_data->head->prev = NULL; 
 }
 
+void rr_rotate(t_stack *stack_a, t_stack *stack_b)
+{
+    rotate(stack_a);
+    rotate(stack_b);
+}
+
 void r_rotate(t_stack *stack_data)
 {
     if (stack_data->size < 2)
@@ -81,4 +93,10 @@ void r_rotate(t_stack *stack_data)
     // make tail_next as new tail
     stack_data->tail = next_tail;
     stack_data->tail->next = NULL; 
+}
+
+void rr_r_rotate(t_stack *stack_a, t_stack *stack_b)
+{
+    r_rotate(stack_a);
+    r_rotate(stack_b);
 }
