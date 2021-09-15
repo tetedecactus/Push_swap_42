@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/14 15:37:53 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/15 19:24:32 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,27 @@
 #include <stdlib.h>
 #include <limits.h>
 
-typedef struct s_stack_node
+typedef struct  s_stack_node
 {
     int                 data;
     struct s_stack_node *prev;
     struct s_stack_node *next;
-}   t_stack_node;
+}               t_stack_node;
 
-typedef struct s_stack
+typedef struct  s_stack
 {
     t_stack_node        *head;
     t_stack_node        *tail;
     int                 size;
-}   t_stack;
+}               t_stack;
+
+typedef struct  s_move
+{
+    int ra;
+    int rb;
+    int pa;
+    int pb;   
+}               t_move;
 
 /* 
 * ---Check stack function---
@@ -45,13 +53,13 @@ int             if_array_is_digit(char **argv, int stack_size);
 void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
+t_stack         *init_stack(int argc, char *argv[]);
 t_stack         *create_stack(int stack_size, char *argv[], t_stack *stack);
 void            print_stack(t_stack *stack);
 
 // Create and print array
 int             *create_array(char *argv[], int stack_size);
 void            print_array(int *arr, int stack_size);
-t_stack         *init_stack(int argc, char *argv[]);
 
 // Error message function
 void            error_message();
@@ -97,5 +105,11 @@ void            swap_in_stack(int *a, int *b);
 t_stack_node    *partition(t_stack_node *low, t_stack_node *high);
 void            _quick_sort(t_stack_node *low, t_stack_node *high);
 void            quick_sort(t_stack_node *head);
+
+// Check stack function 
+t_stack         *stack_of_three(t_stack *stack);
+t_stack         *stack_of_five(t_stack *stack, int stack_size);
+t_stack         *stack_more_than_five(t_stack *stack, int stack_size);
+t_stack         *check_stack(t_stack *stack, int stack_size);
 
 #endif
