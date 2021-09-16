@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/15 19:30:48 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/16 13:10:43 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int main(int argc, char *argv[])
     print_stack(stack_a);
     //--------TEST TESTING TEST --------//
     //quick_sort(stack_a->head);
-    check_stack(stack_a, stack_a->size);
+    //check_stack(stack_a, stack_a->size);
+    radix_sort(stack_a->size, stack_a, stack_b);
     print_stack(stack_a);
 
     if (free_me)

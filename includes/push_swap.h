@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/15 19:24:32 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/16 13:09:35 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+
+#define A = 1
+#define B = 2
+#define both = 3
 
 typedef struct  s_stack_node
 {
@@ -34,6 +38,8 @@ typedef struct  s_stack
 
 typedef struct  s_move
 {
+    int big_pivot;
+    int small_pivot;
     int ra;
     int rb;
     int pa;
@@ -105,6 +111,9 @@ void            swap_in_stack(int *a, int *b);
 t_stack_node    *partition(t_stack_node *low, t_stack_node *high);
 void            _quick_sort(t_stack_node *low, t_stack_node *high);
 void            quick_sort(t_stack_node *head);
+
+// Radix sort function
+void radix_sort(int stack_size, t_stack *stack_a, t_stack *stack_b);
 
 // Check stack function 
 t_stack         *stack_of_three(t_stack *stack);
