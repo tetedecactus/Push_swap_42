@@ -24,6 +24,11 @@ static int power(int exposant, int data)
     return (ret);
 }
 
+// static radix_sort_array(int stack_size, int arr[])
+// {
+
+// }
+
 void radix_sort(int stack_size, t_stack *stack_a, t_stack *stack_b)
 {
     int i;
@@ -35,7 +40,7 @@ void radix_sort(int stack_size, t_stack *stack_a, t_stack *stack_b)
     {
         while (i++ <= stack_size)
         {
-            //printf("inside\n");
+            printf("inside\n");
             if ((stack_a->head->data ^ power(bit, 2)) <= stack_a->head->data)
                 rotate(stack_a);
             else

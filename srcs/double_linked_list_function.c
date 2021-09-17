@@ -54,6 +54,7 @@ t_stack_node *new_node_init(int data)
     if (new_node == NULL)
         return (NULL);
     new_node->data = data;
+    new_node->i = 0;
     new_node->prev = NULL;
     new_node->next = NULL;
 
