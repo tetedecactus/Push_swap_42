@@ -58,6 +58,40 @@ void    print_stack(t_stack *stack)
  
 }
 
+int *array_indexing(int *arr, int stack_size)
+{
+    int i;
+    int j;
+    int index;
+    int arr_temp[stack_size];
+    
+    i = 0;
+    j = 0;
+    index = 0;
+
+    while (i < stack_size)
+    {
+        j = 0;
+        while (j <stack_size)
+        {
+            if (arr[i] > arr[j])
+                index++;
+            j++; 
+        }
+        arr_temp[i] = index;
+        index = 0;
+        i++;
+        
+    }
+    i = 0;
+    while (i < stack_size)
+    {
+        arr[i] = arr_temp[i];
+        i++;
+    }
+    return (arr);
+}
+
 void *stack_indexing(t_stack *stack, int stack_size)
 {
     t_stack_node *max;

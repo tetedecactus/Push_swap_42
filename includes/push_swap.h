@@ -68,6 +68,7 @@ void            *stack_indexing(t_stack *stack, int stack_size);
 // Create and print array
 int             *create_array(char *argv[], int stack_size);
 void            print_array(int *arr, int stack_size);
+int             *array_indexing(int *arr, int stack_size);
 
 // Error message function
 void            error_message();
@@ -106,7 +107,7 @@ void            deallocate(t_stack **tail, t_stack **head);
 // Quick sort  on array function
 void            quick_array_swap(int *a, int *b);
 int             partition_array(int arr[], int low, int high);
-void            quick_sort_array(int arr[], int low, int high);
+int             *quick_sort_array(int arr[], int low, int high);
 
 // Quick sort on stack function
 void            swap_in_stack(int *a, int *b);

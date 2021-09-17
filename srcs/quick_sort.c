@@ -45,7 +45,7 @@ int partition_array(int arr[], int low, int high)
     return (i + 1);
 }
 
-void quick_sort_array(int arr[], int low, int high)
+int *quick_sort_array(int arr[], int low, int high)
 {
     int pi;
 
@@ -56,6 +56,7 @@ void quick_sort_array(int arr[], int low, int high)
         quick_sort_array(arr, low, pi - 1);
         quick_sort_array(arr, pi + 1, high);
     }
+    return (arr);
 }
 //--------------- Quick sort double linked list ----------------//
 
