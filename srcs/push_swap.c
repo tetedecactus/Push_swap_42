@@ -47,10 +47,10 @@ int main(int argc, char *argv[])
     print_stack(stack_a);
     //--------TEST TESTING TEST --------//
     //quick_sort(stack_a->head);
-    //check_stack(stack_a, stack_a->size);
-    radix_sort(stack_a->size, stack_a, stack_b);
+    check_stack(stack_a, stack_a->size);
+    //stack_indexing(stack_a, stack_a->size);
+    //radix_sort(stack_a->size, stack_a, stack_b);
     print_stack(stack_a);
-
     if (free_me)
     {
         free_argv(argv);

@@ -42,9 +42,7 @@ void radix_sort(int stack_size, t_stack *stack_a, t_stack *stack_b)
                 push(stack_a, stack_b);
         }
         while (stack_b->head != NULL)
-        {
             push(stack_b, stack_a);
-        }
         i = 0;
         bit++;
     }

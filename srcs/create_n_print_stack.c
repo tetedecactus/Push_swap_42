@@ -56,4 +56,32 @@ void    print_stack(t_stack *stack)
     ft_putchar(',');
     ft_putchar('\n');
  
-} 
+}
+
+void *stack_indexing(t_stack *stack, int stack_size)
+{
+    t_stack_node *max;
+    t_stack_node *min;
+    t_stack_node *temp;
+    int max_index;
+    int min_index;
+    
+    min_index = 1;
+    max_index = stack_size;
+    while (min_index <= max_index)
+    {
+        max = NULL;
+        min = NULL;
+        temp = stack->head;
+        while (temp != NULL)
+        {
+            if (temp->i <= 0 && (min == NULL || temp->data < min->data))
+                min = temp;
+            if (temp->i <= 0 && (max == NULL || temp->data > max->data))
+                max = temp;
+            temp = temp->next;
+        }
+        min->i = min_index++;
+        max->i = max_index++;
+    }
+}

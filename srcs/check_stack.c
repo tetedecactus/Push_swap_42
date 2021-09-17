@@ -15,23 +15,27 @@
 t_stack *stack_of_three(t_stack *stack)
 {
     if (stack->head->data > stack->head->next->data && stack->head->data < stack->head->next->next->data)
+    {
         swap(stack->head); ft_putstr_fd("sa\n", 1);
-    if (stack->head->data > stack->head->next->data && stack->head->next->data > stack->head->next->next->data)
+    }    
+    else if (stack->head->data > stack->head->next->data && stack->head->next->data > stack->head->next->next->data)
     {
         swap(stack->head); ft_putstr_fd("sa\n", 1);
         r_rotate(stack); ft_putstr_fd("ra\n", 1);
     }
-    if (stack->head->data > stack->head->next->data && stack->head->next->data < stack->head->next->next->data)
+    else if (stack->head->data > stack->head->next->data && stack->head->next->data < stack->head->next->next->data)
+    {
         rotate(stack); ft_putstr_fd("ra\n", 1);
-    if (stack->head->data < stack->head->next->data && stack->head->next->data > stack->head->next->next->data)
+    }    
+    else if (stack->head->data < stack->head->next->data && stack->head->next->data > stack->head->next->next->data)
     {
         if (stack->head->data < stack->head->next->next->data)
         {
             swap(stack->head); ft_putstr_fd("sa\n", 1);
             rotate(stack); ft_putstr_fd("ra\n", 1);
         }
-        else
-        r_rotate(stack); ft_putstr_fd("rra\n", 1);
+        else if (stack->head->data > stack->head->next->next->data)
+             r_rotate(stack); ft_putstr_fd("rra\n", 1);
     }
     return (stack);
 }
