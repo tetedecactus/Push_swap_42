@@ -23,14 +23,14 @@ t_stack *init_stack(int argc, char *argv[])
     return (stack);
 }
 
-t_stack *create_stack(int stack_size, char *argv[], t_stack *stack)
+t_stack *create_stack(int stack_size, int *arr, t_stack *stack)
 {
     int i;
     
     i = 0;
     while (i < stack_size)
     {
-        insert_end(&stack->head, new_node_init(ft_atoi(argv[i])));
+        insert_end(&stack->head, new_node_init(arr[i]));
         i++;
     }
     stack->tail = stack->head;
@@ -58,64 +58,30 @@ void    print_stack(t_stack *stack)
  
 }
 
-int *array_indexing(int *arr, int stack_size)
-{
-    int i;
-    int j;
-    int index;
-    int arr_temp[stack_size];
+// void *stack_indexing(t_stack *stack, int stack_size)
+// {
+//     t_stack_node *max;
+//     t_stack_node *min;
+//     t_stack_node *temp;
+//     int max_index;
+//     int min_index;
     
-    i = 0;
-    j = 0;
-    index = 0;
-
-    while (i < stack_size)
-    {
-        j = 0;
-        while (j <stack_size)
-        {
-            if (arr[i] > arr[j])
-                index++;
-            j++; 
-        }
-        arr_temp[i] = index;
-        index = 0;
-        i++;
-        
-    }
-    i = 0;
-    while (i < stack_size)
-    {
-        arr[i] = arr_temp[i];
-        i++;
-    }
-    return (arr);
-}
-
-void *stack_indexing(t_stack *stack, int stack_size)
-{
-    t_stack_node *max;
-    t_stack_node *min;
-    t_stack_node *temp;
-    int max_index;
-    int min_index;
-    
-    min_index = 1;
-    max_index = stack_size;
-    while (min_index <= max_index)
-    {
-        max = NULL;
-        min = NULL;
-        temp = stack->head;
-        while (temp != NULL)
-        {
-            if (temp->i <= 0 && (min == NULL || temp->data < min->data))
-                min = temp;
-            if (temp->i <= 0 && (max == NULL || temp->data > max->data))
-                max = temp;
-            temp = temp->next;
-        }
-        min->i = min_index++;
-        max->i = max_index++;
-    }
-}
+//     min_index = 1;
+//     max_index = stack_size;
+//     while (min_index <= max_index)
+//     {
+//         max = NULL;
+//         min = NULL;
+//         temp = stack->head;
+//         while (temp != NULL)
+//         {
+//             if (temp->i <= 0 && (min == NULL || temp->data < min->data))
+//                 min = temp;
+//             if (temp->i <= 0 && (max == NULL || temp->data > max->data))
+//                 max = temp;
+//             temp = temp->next;
+//         }
+//         min->i = min_index++;
+//         max->i = max_index++;
+//     }
+// }

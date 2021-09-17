@@ -52,19 +52,19 @@ t_stack *stack_of_three(t_stack *stack)
     
 // }
 
-t_stack *check_stack(t_stack *stack, int stack_size)
-{
-    // if (stack->size > 5)
-    // {
+// t_stack *check_stack(t_stack *stack, int stack_size)
+// {
+//     // if (stack->size > 5)
+//     // {
         
-    // }
-    if (stack->size == 3)
-    {
-        stack = stack_of_three(stack);
-    }
-    // if (stack->size == 5)
-    // {
+//     // }
+//     if (stack->size == 3)
+//     {
+//         stack = stack_of_three(stack);
+//     }
+//     // if (stack->size == 5)
+//     // {
         
-    // }
-    return (stack);
-}
+//     // }
+//     return (stack);
+// }

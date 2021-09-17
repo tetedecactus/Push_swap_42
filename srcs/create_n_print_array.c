@@ -12,6 +12,32 @@
 
 #include "../includes/push_swap.h"
 
+int *array_indexing(int *arr, int stack_size)
+{
+    int i;
+    int j;
+    int index;
+    int arr_temp[stack_size + 2];
+    
+    i = -1;
+    index = 0;
+    while (i++ < stack_size)
+    {
+        j = -1;
+        while (j++ < stack_size)
+        {
+            if (arr[i] > arr[j])
+                index++;
+        }
+        arr_temp[i] = index;
+        index = 0;
+    }
+    i = -1;
+    while (i++ < stack_size)
+        arr[i] = arr_temp[i];
+    return (arr);
+}
+
 int *create_array(char *argv[], int stack_size)
 {
     int i;

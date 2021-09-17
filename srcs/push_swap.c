@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     }
     stack_a = init_stack(argc, argv);
     stack_b->head = NULL;
-    //stack_a->size = stack_size_calculator(argc, argv);
+    stack_a->size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_a->size);
     //valid arg
     if_valid_args(argv, stack_a->size);
@@ -40,14 +40,14 @@ int main(int argc, char *argv[])
     ft_putstr_fd("array = ", 1);
     print_array(arr, stack_a->size);
     //quick_sort_array(arr, 0, (stack_a->size - 1));
-    ft_putstr_fd("sorted array = ", 1);
-    print_array(arr, stack_a->size);
+    //ft_putstr_fd("sorted array = ", 1);
+    //print_array(arr, stack_a->size);
     arr = array_indexing(arr, stack_a->size);
     print_array(arr, stack_a->size);
 
     //create n print stack a & b
-    //stack_a = create_stack(stack_a->size, argv, stack_a);
-    //print_stack(stack_a);
+    stack_a = create_stack(stack_a->size, arr, stack_a);
+    print_stack(stack_a);
     //--------TEST TESTING TEST --------//
     //quick_sort(stack_a->head);
     //check_stack(stack_a, stack_a->size);
