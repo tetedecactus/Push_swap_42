@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:33:10 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/18 16:19:20 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/18 16:33:20 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int *stack_of_three(int *arr, int stack_size)
     {
         if (arr[0] > arr[2])
         {
-            rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
+            r_rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
         }
         else if (arr[0] < arr[2])
         {
             swap(arr); ft_putstr_fd("sa\n", 1);
-        r_rotate(arr, stack_size); ft_putstr_fd("rra\n", 1);
+            rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
         }
     }
     return (arr);
