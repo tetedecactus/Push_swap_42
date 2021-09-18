@@ -67,3 +67,13 @@ void print_array(int *arr, int stack_size)
     }
     ft_putchar('\n');
 } 
+
+int find_mid_value(int *arr, int stack_size)
+{
+    int mid_value;
+
+    arr = quick_sort_array(arr, 0, stack_size);
+    mid_value = (arr[0] + arr[stack_size] / 2);
+
+    return (mid_value);
+}

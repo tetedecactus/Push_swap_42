@@ -64,11 +64,13 @@ t_stack         *init_stack(int argc, char *argv[]);
 t_stack         *create_stack(int stack_size, int *arr, t_stack *stack);
 void            print_stack(t_stack *stack);
 void            *stack_indexing(t_stack *stack, int stack_size);
+t_stack_node    *find_mid_stack(int *arr, t_stack *stack, int stack_size);
 
 // Create and print array
 int             *create_array(char *argv[], int stack_size);
 void            print_array(int *arr, int stack_size);
 int             *array_indexing(int *arr, int stack_size);
+int             find_mid_value(int *arr, int stack_size);
 
 // Error message function
 void            error_message();

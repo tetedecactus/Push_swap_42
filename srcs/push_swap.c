@@ -14,10 +14,12 @@
 
 int main(int argc, char *argv[])
 {
-    int free_me;
-    int *arr;
-    t_stack *stack_a;
-    t_stack *stack_b;
+    int          free_me;
+    int             *arr;
+    int        mid_value;
+    t_stack_node    *mid;
+    t_stack     *stack_a;
+    t_stack     *stack_b;
 
     stack_b = malloc(sizeof(t_stack));
     free_me = 0;
@@ -44,6 +46,10 @@ int main(int argc, char *argv[])
     //print_array(arr, stack_a->size);
     arr = array_indexing(arr, stack_a->size);
     print_array(arr, stack_a->size);
+    mid_value = find_mid_value(arr, stack_a->size);
+    mid = new_node_init(mid_value);
+    mid = find_mid_stack(arr, stack_a, stack_a->size);
+    printf("%d\n", mid->data);
 
     //create n print stack a & b
     stack_a = create_stack(stack_a->size, arr, stack_a);
@@ -51,9 +57,8 @@ int main(int argc, char *argv[])
     //--------TEST TESTING TEST --------//
     //quick_sort(stack_a->head);
     //check_stack(stack_a, stack_a->size);
-    //stack_indexing(stack_a, stack_a->size);
     //radix_sort(stack_a->size, stack_a, stack_b);
-    //print_stack(stack_a);
+    print_stack(stack_a);
     if (free_me)
     {
         free_argv(argv);
