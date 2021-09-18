@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:26:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/16 13:09:35 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/18 14:39:38 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,11 @@ typedef struct  s_move
 * 4. Check de fonction 2 & 3 ensemble
 */
 int             stack_size_calculator(int argc, char *argv[]);
-int             if_digit_duplicate(char *argv[], int stack_size);
-int             if_array_is_digit(char **argv, int stack_size);
 void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
 t_stack         *init_stack(int argc, char *argv[]);
-t_stack         *create_stack(int stack_size, int *arr, t_stack *stack);
+t_stack         *create_stack(int stack_size, char **argv, t_stack *stack);
 void            print_stack(t_stack *stack);
 void            *stack_indexing(t_stack *stack, int stack_size);
 t_stack_node    *find_mid_stack(int *arr, t_stack *stack, int stack_size);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 09:25:42 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/18 14:43:43 by olabrecq         ###   ########.fr       */
+/*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
+/*   Updated: 2021/09/18 16:22:16 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,39 @@
 int main(int argc, char *argv[])
 {
     int          free_me;
-    int             *arr;
-    t_stack_node    *mid;
-    t_stack     *stack_a;
-    t_stack     *stack_b;
+    int             *arr_a;
+    int             *arr_b;
+    int              mid;
+    int         stack_size;
 
-    stack_b = malloc(sizeof(t_stack));
     free_me = 0;
     argv++;
     if (argc < 2)
         error_message();
     if (argc == 2)
     {
-        argv = ft_split(argv[0], ' ');
+        argv = ft_split(*argv, ' ');
         free_me++;
     }
-    stack_a = init_stack(argc, argv);
-    stack_b->head = NULL;
-    stack_a->size = stack_size_calculator(argc, argv);
-    printf("stack size = %d\n", stack_a->size);
-    if_valid_args(argv, stack_a->size);
-    stack_a = create_stack(stack_a->size, argv, stack_a);
-    print_stack(stack_a);
+    stack_size = stack_size_calculator(argc, argv);
+    printf("stack size = %d\n", stack_size);
+    if_valid_args(argv, stack_size);
+    arr_a = create_array(argv, stack_size);
+    arr_b = create_array(argv, stack_size);
+    ft_putstr_fd("array = ", 1);
+    print_array(arr_a, stack_size);
+    arr_a = array_indexing(arr_a, stack_size);
+    arr_b = array_indexing(arr_b, stack_size);
+    print_array(arr_a, stack_size);
+    mid = find_mid_value(arr_b, stack_size);
+    printf("mid value = %d\n", mid);
+    delete_array(arr_b, stack_size);
+    arr_a = check_number(arr_a, stack_size);
+    print_array(arr_a, stack_size);
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
-    //deallocate(&stack_a, &stack_b);
     printf("fin\n");
 }

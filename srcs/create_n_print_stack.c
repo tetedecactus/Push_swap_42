@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:06:13 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/15 17:42:15 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/18 14:40:23 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ t_stack *init_stack(int argc, char *argv[])
     return (stack);
 }
 
-t_stack *create_stack(int stack_size, int *arr, t_stack *stack)
+t_stack *create_stack(int stack_size, char **argv, t_stack *stack)
 {
     int i;
     
     i = 0;
     while (i < stack_size)
     {
-        insert_end(&stack->head, new_node_init(arr[i]));
+        insert_end(&stack->head, new_node_init(ft_atoi(argv[i])));
         i++;
     }
     stack->tail = stack->head;
