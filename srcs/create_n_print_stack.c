@@ -61,9 +61,9 @@ void    print_stack(t_stack *stack)
 t_stack_node *find_mid_stack(int *arr, t_stack *stack, int stack_size)
 {
     t_stack_node *mid_data;
-
-    mid_data->data = find_mid_value(arr, stack_size);
+    
+    mid_data->data = (stack_size / 2);  
     while (stack->head->data != mid_data->data)
         stack->head = stack->head->next;
-    return (mid_data);
+    return (stack->head);
 }
