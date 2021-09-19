@@ -12,7 +12,13 @@
 
 #include "../includes/push_swap.h"
 
-int *stack_of_three(int *arr, int stack_size)
+void less_than_three(int *arr, int stack_size)
+{
+    if (arr[0] > arr[1])
+        swap(arr); ft_putstr_fd("sa\n", 1);
+}
+
+void stack_of_three(int *arr, int stack_size)
 {
 	if (arr[0] > arr[1] && arr[0] < arr[2])
     {
@@ -40,11 +46,12 @@ int *stack_of_three(int *arr, int stack_size)
             rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
         }
     }
-    return (arr);
 }
 
 int *check_number(int *arr, int stack_size)
 {
+    if (stack_size < 3)
+        less_than_three(arr, stack_size);
     if (stack_size == 3)
         stack_of_three(arr, stack_size);
     return (arr);

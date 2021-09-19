@@ -39,12 +39,12 @@ int main(int argc, char *argv[])
     array_indexing(arr_a, stack_size);
     array_indexing(arr_b, stack_size);
     print_array(arr_a, stack_size);
-    mid = find_mid_value(arr_b, stack_size);
+    mid = find_mid_value(stack_size);
     printf("mid value = %d\n", mid);
     delete_array(arr_b, stack_size);
     print_array(arr_a, stack_size);
     print_array(arr_b, stack_size);
-    //check_number(arr_a, stack_size);
+    check_number(arr_a, stack_size);
     print_array(arr_a, stack_size);
     print_array(arr_b, stack_size);
     if (free_me)

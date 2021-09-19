@@ -85,7 +85,7 @@ void print_array(int *arr, int stack_size)
     ft_putchar('\n');
 } 
 
-int find_mid_value(int *arr, int stack_size)
+int find_mid_value(int stack_size)
 {
     int mid_value;
     

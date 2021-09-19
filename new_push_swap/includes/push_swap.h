@@ -45,7 +45,7 @@ int             *create_array(char *argv[], int stack_size);
 void            print_array(int *arr, int stack_size);
 void            delete_array(int *arr_b, int stack_size);
 int             *array_indexing(int *arr, int stack_size);
-int             find_mid_value(int *arr, int stack_size);
+int             find_mid_value(int stack_size);
 
 // Error message function
 void            error_message();
@@ -72,6 +72,7 @@ void            push(int *arr_a, int *arr_b, int stack_size);
 
 // Check number of digit
 int             *check_number(int *arr, int stack_size);
-int             *stack_of_three(int *arr, int stack_size);
+void            stack_of_three(int *arr, int stack_size);
+void            less_than_three(int *arr, int stack_size);
 
 #endif
