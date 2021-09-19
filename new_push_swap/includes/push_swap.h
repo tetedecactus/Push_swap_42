@@ -68,7 +68,7 @@ int             *quick_sort_array(int arr[], int low, int high);
 void            swap(int *arr);
 void            rotate(int *arr, int stack_size);
 void            r_rotate(int *arr, int stack_size);
-void            push(int *arr_a, int *arr_b);
+void            push(int *arr_a, int *arr_b, int stack_size);
 
 // Check number of digit
 int             *check_number(int *arr, int stack_size);

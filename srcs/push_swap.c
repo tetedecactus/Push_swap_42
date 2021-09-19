@@ -39,10 +39,13 @@ int main(int argc, char *argv[])
     arr = create_array(argv, stack_a->size);
     arr_temp = create_array(argv, stack_a->size);
     array_indexing(arr, stack_a->size);
-    mid = find_mid_value(arr_temp, stack_a->size);
-    printf("mid value = %d\n", mid);
+    //mid = find_mid_value(arr_temp, stack_a->size);
+    //rintf("mid value = %d\n", mid);
     stack_a = create_stack(stack_a->size, arr, stack_a);
     print_stack(stack_a);
+    check_stack(stack_a, stack_a->size);
+    print_stack(stack_a);
+
     if (free_me)
     {
         free_argv(argv);

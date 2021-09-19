@@ -51,7 +51,19 @@ void r_rotate(int *arr, int stack_size)
     arr[0] = last;
 }
 
-void push(int *arr_a, int *arr_b)
+void push(int *arr_a, int *arr_b, int stack_size)
 {
-    
+    int i;
+    int j;
+    int temp;
+
+    i = 0;
+    j = stack_size;
+    while (arr_b[j] != 0)
+        j--;
+    while (arr_a[i] == 0)
+        i++;
+    temp = arr_a[i];
+    arr_a[i] = arr_b[j];
+    arr_b[j] = temp;
 }

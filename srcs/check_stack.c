@@ -12,7 +12,13 @@
 
 #include "../includes/push_swap.h"
 
-t_stack *stack_of_three(t_stack *stack)
+void less_than_three(t_stack *stack)
+{
+    if (stack->head->data > stack->head->next->data)
+        swap(stack->head); ft_putstr_fd("sa\n", 1);
+}
+
+void stack_of_three(t_stack *stack)
 {
     if (stack->head->data > stack->head->next->data && stack->head->data < stack->head->next->next->data)
     {
@@ -39,7 +45,7 @@ t_stack *stack_of_three(t_stack *stack)
             rotate(stack); ft_putstr_fd("ra\n", 1);
         }
     }
-    return (stack);
+    //return (stack);
 }
 
 // t_stack *stack_of_five(t_stack *stack, int stack_size)
@@ -52,19 +58,19 @@ t_stack *stack_of_three(t_stack *stack)
     
 // }
 
-// t_stack *check_stack(t_stack *stack, int stack_size)
-// {
-//     // if (stack->size > 5)
-//     // {
+void  check_stack(t_stack *stack, int stack_size)
+{
+    if (stack->size < 3)
+    {
+        less_than_three(stack);
+    }
+    if (stack->size == 3)
+    {
+        stack_of_three(stack);
+    }
+    // if (stack->size == 5)
+    // {
         
-//     // }
-//     if (stack->size == 3)
-//     {
-//         stack = stack_of_three(stack);
-//     }
-//     // if (stack->size == 5)
-//     // {
-        
-//     // }
-//     return (stack);
-// }
+    // }
+    //return (stack);
+}
