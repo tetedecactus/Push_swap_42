@@ -120,9 +120,9 @@ void radix_sort(int stack_size, t_stack *stack_a, t_stack *stack_b);
 
 // Check stack function 
 void            stack_of_three(t_stack *stack);
-t_stack         *stack_of_five(t_stack *stack, int stack_size);
+t_stack         *stack_of_five(t_stack *stack_a, t_stack *stack_b, int stack_size, t_stack_node *find_mid_value);
 t_stack         *stack_more_than_five(t_stack *stack, int stack_size);
-void            check_stack(t_stack *stack, int stack_size);
+void            check_stack(t_stack *stack_a, t_stack *stack_b, int stack_size, t_stack_node *mid);
 void            less_than_three(t_stack *stack);
 
 #endif

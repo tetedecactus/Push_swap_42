@@ -45,32 +45,44 @@ void stack_of_three(t_stack *stack)
             rotate(stack); ft_putstr_fd("ra\n", 1);
         }
     }
-    //return (stack);
 }
 
-// t_stack *stack_of_five(t_stack *stack, int stack_size)
-// {
-    
-// }
+t_stack *stack_of_five(t_stack *stack_a, t_stack *stack_b, int stack_size, t_stack_node *mid_stack)
+{
+    while (stack_a->head != NULL)
+    {
+        if (stack_a->head->data <= mid_stack->data)
+        {
+            push(stack_a, stack_b); ft_putstr_fd("pb\n", 1);
+        }
+        else   
+            stack_a->head = stack_a->head->next;
+    }
+    while (stack_a->head != NULL)
+        stack_a->head = stack_a->head->prev;
+    stack_of_three(stack_a);
+    less_than_three(stack_b);
+    push(stack_b, stack_a);
+    push(stack_b, stack_a);
+}
 
 // t_stack *stack_more_than_five(t_stack *stack, int stack_size)
 // {
     
 // }
 
-void  check_stack(t_stack *stack, int stack_size)
+void  check_stack(t_stack *stack_a, t_stack *stack_b, int stack_size, t_stack_node *mid)
 {
-    if (stack->size < 3)
+    if (stack_a->size < 3)
     {
-        less_than_three(stack);
+        less_than_three(stack_a);
     }
-    if (stack->size == 3)
+    if (stack_a->size == 3)
     {
-        stack_of_three(stack);
+        stack_of_three(stack_a);
     }
-    // if (stack->size == 5)
-    // {
-        
-    // }
-    //return (stack);
+    if (stack_a->size == 5)
+    {
+        stack_of_five(stack_a, stack_b, stack_a->size, mid);
+    }
 }

@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     print_stack(stack_temp);
     mid_stack = find_mid_stack(arr_temp, stack_temp, stack_temp->size);
     printf("mid stack = %d\n", stack_temp->head->data);
-    //check_stack(stack_a, stack_a->size);
+    check_stack(stack_a, stack_b, stack_a->size, mid_stack);
 
     if (free_me)
     {
