@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
 {
     int          free_me;
     int             *arr;
-    t_stack_node    *mid;
+    int         *arr_temp;
+    int              mid;
     t_stack     *stack_a;
     t_stack     *stack_b;
 
@@ -35,7 +36,12 @@ int main(int argc, char *argv[])
     stack_a->size = stack_size_calculator(argc, argv);
     printf("stack size = %d\n", stack_a->size);
     if_valid_args(argv, stack_a->size);
-    stack_a = create_stack(stack_a->size, argv, stack_a);
+    arr = create_array(argv, stack_a->size);
+    arr_temp = create_array(argv, stack_a->size);
+    array_indexing(arr, stack_a->size);
+    mid = find_mid_value(arr_temp, stack_a->size);
+    printf("mid value = %d\n", mid);
+    stack_a = create_stack(stack_a->size, arr, stack_a);
     print_stack(stack_a);
     if (free_me)
     {

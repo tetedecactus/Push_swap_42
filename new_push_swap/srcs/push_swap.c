@@ -14,10 +14,10 @@
 
 int main(int argc, char *argv[])
 {
-    int          free_me;
+    int            free_me;
     int             *arr_a;
     int             *arr_b;
-    int              mid;
+    int                mid;
     int         stack_size;
 
     free_me = 0;
@@ -36,13 +36,15 @@ int main(int argc, char *argv[])
     arr_b = create_array(argv, stack_size);
     ft_putstr_fd("array = ", 1);
     print_array(arr_a, stack_size);
-    arr_a = array_indexing(arr_a, stack_size);
-    arr_b = array_indexing(arr_b, stack_size);
+    array_indexing(arr_a, stack_size);
+    array_indexing(arr_b, stack_size);
     print_array(arr_a, stack_size);
     mid = find_mid_value(arr_b, stack_size);
     printf("mid value = %d\n", mid);
     delete_array(arr_b, stack_size);
-    arr_a = check_number(arr_a, stack_size);
+    print_array(arr_b, stack_size);
+    
+    //check_number(arr_a, stack_size);
     print_array(arr_a, stack_size);
     if (free_me)
     {

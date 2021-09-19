@@ -59,7 +59,7 @@ void            if_valid_args(char *argv[], int stack_size);
 
 // Create stack function
 t_stack         *init_stack(int argc, char *argv[]);
-t_stack         *create_stack(int stack_size, char **argv, t_stack *stack);
+t_stack         *create_stack(int stack_size, int *arr, t_stack *stack);
 void            print_stack(t_stack *stack);
 void            *stack_indexing(t_stack *stack, int stack_size);
 t_stack_node    *find_mid_stack(int *arr, t_stack *stack, int stack_size);

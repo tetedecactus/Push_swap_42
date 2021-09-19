@@ -17,24 +17,29 @@ int *array_indexing(int *arr, int stack_size)
     int i;
     int j;
     int index;
-    int arr_temp[stack_size + 2];
+    int arr_temp[stack_size];
     
-    i = -1;
-    index = 0;
-    while (i++ < stack_size)
+    i = 0;
+    index = 1;
+    while (i < stack_size)
     {
-        j = -1;
-        while (j++ < stack_size)
+        j = 0;
+        while (j < stack_size)
         {
             if (arr[i] > arr[j])
                 index++;
+            j++;
         }
         arr_temp[i] = index;
-        index = 0;
+        index = 1;
+        i++;
     }
-    i = -1;
-    while (i++ < stack_size)
+    i = 0;
+    while (i < stack_size)
+    {
         arr[i] = arr_temp[i];
+        i++;
+    }
     return (arr);
 }
 
@@ -43,7 +48,7 @@ int *create_array(char *argv[], int stack_size)
     int i;
     int *array_a;
     
-    array_a = malloc(sizeof(char) * stack_size - 1);
+    array_a = malloc(sizeof(int) * stack_size);
 
     i = 0;
     while (i < stack_size)

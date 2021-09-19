@@ -50,6 +50,7 @@ void r_rotate(int *arr, int stack_size)
     }
     arr[0] = last;
 }
+
 void push(int *arr_a, int *arr_b)
 {
     

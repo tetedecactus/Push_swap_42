@@ -23,14 +23,14 @@ t_stack *init_stack(int argc, char *argv[])
     return (stack);
 }
 
-t_stack *create_stack(int stack_size, char **argv, t_stack *stack)
+t_stack *create_stack(int stack_size, int *arr, t_stack *stack)
 {
     int i;
     
     i = 0;
     while (i < stack_size)
     {
-        insert_end(&stack->head, new_node_init(ft_atoi(argv[i])));
+        insert_end(&stack->head, new_node_init(arr[i]));
         i++;
     }
     stack->tail = stack->head;
