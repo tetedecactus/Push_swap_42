@@ -81,8 +81,8 @@ void  check_stack(t_stack *stack_a, t_stack *stack_b, int stack_size, t_stack_no
     {
         stack_of_three(stack_a);
     }
-    if (stack_a->size == 5)
-    {
-        stack_of_five(stack_a, stack_b, stack_a->size, mid);
-    }
+    // if (stack_a->size == 5)
+    // {
+    //     stack_of_five(stack_a, stack_b, stack_a->size, mid);
+    // }
 }
