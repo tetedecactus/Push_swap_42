@@ -6,53 +6,53 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:33:10 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/20 10:13:23 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 14:05:26 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void less_than_three(int *arr, int stack_size)
+void less_than_three(t_arr *stack)
 {
-    if (arr[0] > arr[1])
-        swap(arr); ft_putstr_fd("sa\n", 1);
+    if (stack->arr[0] > stack->arr[1])
+        swap(stack); ft_putstr_fd("sa\n", 1);
 }
 
-void stack_of_three(int *arr, int stack_size)
+void stack_of_three(t_arr *stack)
 {
-	if (arr[0] > arr[1] && arr[0] < arr[2])
+	if (stack->arr[0] > stack->arr[1] && stack->arr[0] < stack->arr[2])
     {
-		swap(arr); 
+		swap(stack); 
         ft_putstr_fd("sa\n", 1);
     }
-    else if (arr[0] > arr[1] && arr[1] > arr[2])
+    else if (stack->arr[0] > stack->arr[1] && stack->arr[1] > stack->arr[2])
     {
-        swap(arr); ft_putstr_fd("sa\n", 1);
-        r_rotate(arr, stack_size); ft_putstr_fd("rra\n", 1);
+        swap(stack); ft_putstr_fd("sa\n", 1);
+        r_rotate(stack); ft_putstr_fd("rra\n", 1);
     }
-    else if (arr[0] > arr[1] && arr[1] < arr[2])
+    else if (stack->arr[0] > stack->arr[1] && stack->arr[1] < stack->arr[2])
     {
-        rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
+        rotate(stack); ft_putstr_fd("ra\n", 1);
     }    
-    else if (arr[0] < arr[1] && arr[1] > arr[2])
+    else if (stack->arr[0] < stack->arr[1] && stack->arr[1] > stack->arr[2])
     {
-        if (arr[0] > arr[2])
+        if (stack->arr[0] > stack->arr[2])
         {
-            r_rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
+            r_rotate(stack); ft_putstr_fd("ra\n", 1);
         }
-        else if (arr[0] < arr[2])
+        else if (stack->arr[0] < stack->arr[2])
         {
-            swap(arr); ft_putstr_fd("sa\n", 1);
-            rotate(arr, stack_size); ft_putstr_fd("ra\n", 1);
+            swap(stack); ft_putstr_fd("sa\n", 1);
+            rotate(stack); ft_putstr_fd("ra\n", 1);
         }
     }
 }
 
-int *check_number(int *arr, int stack_size)
+int *check_number(t_arr *stack)
 {
-    if (stack_size < 3)
-        less_than_three(arr, stack_size);
-    if (stack_size == 3)
-        stack_of_three(arr, stack_size);
-    return (arr);
+    if (stack->size < 3)
+        less_than_three(stack);
+    if (stack->size == 3)
+        stack_of_three(stack);
+    return (stack->arr);
 }

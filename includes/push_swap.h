@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 12:35:35 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 13:58:50 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void            create_array(char *argv[], t_arr *stack);
 void            print_array(int *arr, int stack_size);
 void            delete_array(int *arr_b, int stack_size);
 void            array_indexing(t_stack *stack);
+// find value function
 void            find_mid_value(t_arr *value);
 void            find_max_value(t_arr *value);
 void            find_min_value(t_arr *value);
@@ -73,14 +74,14 @@ void	          free_argv(char *argv[]);
 void            quick_sort_array(int arr[], int low, int high);
 
 // Move function
-void            swap(int *arr);
-void            rotate(int *arr, int stack_size);
-void            r_rotate(int *arr, int stack_size);
+void            swap(t_arr *stack);
+void            rotate(t_arr *stack);
+void            r_rotate(t_arr *stack);
 void            push(int *arr_a, int *arr_b, int stack_size);
 
 // Check number of digit
-int             *check_number(int *arr, int stack_size);
-void            stack_of_three(int *arr, int stack_size);
-void            less_than_three(int *arr, int stack_size);
+int             *check_number(t_arr *stack);
+void            stack_of_three(t_arr *stack);
+void            less_than_three(t_arr *stack);
 
 #endif

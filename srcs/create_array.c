@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:36:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 13:04:31 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 13:42:02 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,14 @@ void print_array(int *arr, int stack_size)
 
 void find_mid_value(t_arr *value)
 {
-   value->mid = value->arr[(value->size + 1 / value->size) - 1];
+    int     i;
+    int     result;
+
+    i = 0;
+    result = 0;
+    while (i < value->size)
+        result += value->arr[i++];
+    value->mid = result / value->size;
 }
 
 void find_max_value(t_arr *value)

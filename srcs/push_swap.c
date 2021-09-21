@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 13:09:58 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 14:01:18 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,16 @@ int main(int argc, char *argv[])
     ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
     array_indexing(&stack);
     ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
+    find_max_value(stack.a);
+    find_min_value(stack.a);
+    find_mid_value(stack.a);
     printf("max value = %d\n", stack.a->max);
     printf("min value = %d\n", stack.a->min);
     printf("mid value = %d\n", stack.a->mid);
 
-    // //check_number(arr_a, stack_size);
+    check_number(stack.a);
+    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
+
     if (free_me)
     {
         free_argv(argv);
@@ -49,8 +54,4 @@ int main(int argc, char *argv[])
     }
     printf("fin\n");
 }
-// besoin de debugger array indexing 
-    //find_max_value(stack.a);
-    //find_min_value(stack.a);
-    //find_mid_value(stack.a);
-    //stack.a->mid = stack.a->min + stack.a->max / stack.a->size;
+ 
