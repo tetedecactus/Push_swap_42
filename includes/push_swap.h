@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/20 14:44:43 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:35:35 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct  s_stack
 // Get stack
 int             get_stack(int argc, char **argv);
 void            init_stack(t_stack *stack, int stack_size);
+void            copie_stack_a(t_stack *stack);
 
 // Stack analizer function
 int             stack_size_calculator(int argc, char *argv[]);
@@ -47,7 +48,9 @@ void            create_array(char *argv[], t_arr *stack);
 void            print_array(int *arr, int stack_size);
 void            delete_array(int *arr_b, int stack_size);
 void            array_indexing(t_stack *stack);
-int             find_mid_value(t_stack *value);
+void            find_mid_value(t_arr *value);
+void            find_max_value(t_arr *value);
+void            find_min_value(t_arr *value);
 
 
 // Error message function
@@ -67,7 +70,7 @@ void	          *ft_calloc(size_t count, size_t size);
 void	          free_argv(char *argv[]);
 
 // Quick sort  on array function
-int             *quick_sort_array(int arr[], int low, int high);
+void            quick_sort_array(int arr[], int low, int high);
 
 // Move function
 void            swap(int *arr);

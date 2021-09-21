@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:53:15 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/20 13:14:30 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 13:04:33 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,16 @@ void init_stack(t_stack *stack, int stack_size)
     stack->a = allocate_stack(stack_size);
     stack->b = allocate_stack(stack_size);
     stack->t = allocate_stack(stack_size);
+}
+
+void copie_stack_a(t_stack *stack)
+{
+    int i;
+
+    i = 0;
+    while (i < stack->t->size)
+    {
+        stack->t->arr[i] = stack->a->arr[i];
+        i++;
+    }
 }

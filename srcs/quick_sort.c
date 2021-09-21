@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:42:43 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/18 13:01:40 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/21 10:34:06 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int partition_array(int arr[], int low, int high)
         if (arr[j] < pivot)
         {
             i++;
-            quick_array_swap(&arr[i], &arr[j]);
+            quick_array_swap(&(arr[i]), &(arr[j]));
         }
         j++;
     }
-    quick_array_swap(&arr[i + 1], &arr[high]);
+    quick_array_swap(&(arr[i + 1]), &(arr[high]));
     return (i + 1);
 }
 
-int *quick_sort_array(int arr[], int low, int high)
+void quick_sort_array(int arr[], int low, int high)
 {
     int pi;
 
@@ -55,5 +55,4 @@ int *quick_sort_array(int arr[], int low, int high)
         quick_sort_array(arr, low, pi - 1);
         quick_sort_array(arr, pi + 1, high);
     }
-    return (arr);
 }
