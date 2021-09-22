@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 14:01:18 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/22 14:05:36 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,15 @@ int main(int argc, char *argv[])
     printf("stack size = %d\n", stack.a->size);
     if_valid_args(argv, stack.a->size);
     create_array(argv, stack.a);
-    ft_putstr_fd("array = ", 1);
-    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
-    ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
     array_indexing(&stack);
-    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
     find_max_value(stack.a);
     find_min_value(stack.a);
     find_mid_value(stack.a);
-    printf("max value = %d\n", stack.a->max);
-    printf("min value = %d\n", stack.a->min);
-    printf("mid value = %d\n", stack.a->mid);
-
-    //check_number(stack.a);
-    push_b(stack.a, stack.b);
-    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
-    ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
-    push_a(stack.b, stack.a);
-    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
-    ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
+    check_number(&stack);
     if (free_me)
     {
         free_argv(argv);
         printf("free\n");
     }
-    printf("fin\n");
 }
  

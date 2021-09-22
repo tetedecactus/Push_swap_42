@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:40:30 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 14:00:02 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/22 14:03:43 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void swap(t_arr *stack)
     temp  = stack->arr[0];
     stack->arr[0] =  stack->arr[1];
     stack->arr[1] = temp;
+    ft_putstr_fd("s", 1);
 }
 	
 void rotate(t_arr *stack)
@@ -34,6 +35,7 @@ void rotate(t_arr *stack)
         i++;
     }
     stack->arr[stack->size - 1] = first;
+    ft_putstr_fd("ra\n", 1);
 }
 
 void r_rotate(t_arr *stack)
@@ -49,6 +51,7 @@ void r_rotate(t_arr *stack)
         i--;
     }
     stack->arr[0] = last;
+    ft_putstr_fd("rra\n", 1);
 }
 
 void push_b(t_arr *stack_a, t_arr *stack_b)
@@ -72,6 +75,7 @@ void push_b(t_arr *stack_a, t_arr *stack_b)
     }
     stack_b->arr[0] = temp;
     stack_b->size++;
+    ft_putstr_fd("pb\n", 1);
 }
 
 void push_a(t_arr *stack_b, t_arr *stack_a)
@@ -95,4 +99,5 @@ void push_a(t_arr *stack_b, t_arr *stack_a)
     }
     stack_a->arr[0] = temp;
     stack_a->size++;
+    ft_putstr_fd("pa\n", 1);
 }

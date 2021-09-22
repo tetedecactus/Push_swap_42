@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/21 13:58:50 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/22 11:49:07 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ void            push_b(t_arr *stack_a, t_arr *stack_b);
 void            push_a(t_arr *stack_b, t_arr *stack_a);
 
 // Check number of digit
-int             *check_number(t_arr *stack);
-void            stack_of_three(t_arr *stack);
-void            less_than_three(t_arr *stack);
+void            check_number(t_stack *stack);
+
+// Radix sort
+void            radix_sort(t_arr *stack_a, t_arr *stack_b);
 
 #endif
