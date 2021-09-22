@@ -16,14 +16,14 @@ int get_stack(int argc, char *argv[])
 {
     int need_to_free;
     
-    argv++;
     need_to_free = 0;
+    argv++;
     if (argc < 2)
         error_message();
     if (argc == 2)
     {
-        argv = ft_split(*argv, ' ');
         need_to_free++;
+        argv = ft_split(*argv, ' ');
     }
     return (need_to_free);
 }

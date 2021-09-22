@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
     if_valid_args(argv, stack.a->size);
     create_array(argv, stack.a);
     array_indexing(&stack);
-    find_max_value(stack.a);
-    find_min_value(stack.a);
     find_mid_value(stack.a);
     check_number(&stack);
     print_array(stack.a->arr, stack.a->size);

@@ -51,8 +51,10 @@ void stack_of_three(t_arr *stack)
 void stack_of_five(t_stack *stack)
 {
     int i;
-
+    int len;
+    
     i = 0;
+    len = stack->a->size;
     while (stack->a->size != 3)
     {
         if (stack->a->arr[i] < stack->a->mid)
@@ -62,7 +64,7 @@ void stack_of_five(t_stack *stack)
     }
     stack_of_three(stack->a);
     less_than_three_in_b(stack->b);
-    while(stack->a->size != 5)
+    while(stack->a->size != len)
         push_b(stack->b, stack->a);
 }
 
@@ -72,7 +74,7 @@ void    check_number(t_stack *stack)
         less_than_three_in_a(stack->a);
     if (stack->a->size == 3)
         stack_of_three(stack->a);
-    if (stack->a->size == 5)
+    if (stack->a->size == 4 || stack->a->size == 5)
         stack_of_five(stack);
     if (stack->a->size > 5)
         radix_sort(stack->a, stack->b);
