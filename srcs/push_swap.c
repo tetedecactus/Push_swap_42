@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/22 14:05:36 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/22 14:18:41 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
     }
     stack_size = stack_size_calculator(argc, argv);
     init_stack(&stack, stack_size);
-    printf("stack size = %d\n", stack.a->size);
     if_valid_args(argv, stack.a->size);
     create_array(argv, stack.a);
     array_indexing(&stack);
@@ -38,9 +37,6 @@ int main(int argc, char *argv[])
     find_mid_value(stack.a);
     check_number(&stack);
     if (free_me)
-    {
         free_argv(argv);
-        printf("free\n");
-    }
 }
  

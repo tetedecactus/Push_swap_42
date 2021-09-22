@@ -6,7 +6,7 @@
 #    By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 12:29:07 by olabrecq          #+#    #+#              #
-#    Updated: 2021/09/20 12:31:36 by olabrecq         ###   ########.fr        #
+#    Updated: 2021/09/22 14:08:15 by olabrecq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = 	./srcs/create_array.c \
 		./srcs/check_number_of_digit.c \
 		./srcs/error_message.c ./srcs/free_arg.c ./srcs/move.c ./srcs/outils.c \
 		./srcs/push_swap.c ./srcs/stack_analizer.c ./srcs/ft_split.c \
-		./srcs/quick_sort.c ./srcs/get_stack.c 
+		./srcs/quick_sort.c ./srcs/get_stack.c ./srcs/radix_sort.c
 
 OBJS = ${SRCS:.c=.o}
 CC = gcc 

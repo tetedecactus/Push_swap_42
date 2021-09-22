@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:40:30 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/22 14:03:43 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/22 14:24:19 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void swap(t_arr *stack)
     temp  = stack->arr[0];
     stack->arr[0] =  stack->arr[1];
     stack->arr[1] = temp;
-    ft_putstr_fd("s", 1);
+    ft_putstr_fd("s\n", 1);
 }
 	
 void rotate(t_arr *stack)
