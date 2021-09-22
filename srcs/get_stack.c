@@ -46,6 +46,7 @@ void init_stack(t_stack *stack, int stack_size)
     stack->a = allocate_stack(stack_size);
     stack->b = allocate_stack(stack_size);
     stack->t = allocate_stack(stack_size);
+    stack->a->a = 1;
 }
 
 void copie_stack_a(t_stack *stack)

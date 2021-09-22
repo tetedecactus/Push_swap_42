@@ -17,9 +17,12 @@ void swap(t_arr *stack)
     int temp;
 
     temp  = stack->arr[0];
-    stack->arr[0] =  stack->arr[1];
+    stack->arr[0] = stack->arr[1];
     stack->arr[1] = temp;
-    ft_putstr_fd("s\n", 1);
+    if (stack->a == 1)
+        ft_putstr_fd("sa\n", 1);
+    else 
+        ft_putstr_fd("sb\n", 1);
 }
 	
 void rotate(t_arr *stack)

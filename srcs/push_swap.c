@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     find_min_value(stack.a);
     find_mid_value(stack.a);
     check_number(&stack);
+    print_array(stack.a->arr, stack.a->size);
     if (free_me)
         free_argv(argv);
 }

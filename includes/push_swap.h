@@ -25,6 +25,7 @@ typedef struct s_arr
     int     min;
     int     max;
     int     mid;
+    int      a;
 } t_arr;
 
 typedef struct  s_stack

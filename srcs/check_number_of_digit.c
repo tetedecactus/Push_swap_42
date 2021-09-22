@@ -17,14 +17,12 @@ void less_than_three_in_b(t_arr *stack)
 {
     if (stack->arr[1] > stack->arr[0])
         swap(stack); 
-     ft_putstr_fd("b\n", 1);
 }
 
 void less_than_three_in_a(t_arr *stack)
 {
     if (stack->arr[0] > stack->arr[1])
         swap(stack); 
-        ft_putstr_fd("a\n", 1);
 }
 
 void stack_of_three(t_arr *stack)
