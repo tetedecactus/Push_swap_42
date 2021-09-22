@@ -40,18 +40,31 @@ void array_indexing(t_stack *stack)
 void create_array(char *argv[], t_arr *stack)
 {
     int i;
-    int j;
-    int temp;
     
-    i = stack->size - 1;
-    j = 0;
-    while (i >= 0 )
+    i = 0;
+    while (i < stack->size)
     {
-        stack->arr[i] = ft_atoi(argv[j]);
-        j++;
-        i--;
+        stack->arr[i] = ft_atoi(argv[i]);
+        i++;
     }
 }  
+
+
+// void create_array(char *argv[], t_arr *stack)
+// {
+//     int i;
+//     int j;
+//     int temp;
+    
+//     i = stack->size - 1;
+//     j = 0;
+//     while (i >= 0 )
+//     {
+//         stack->arr[i] = ft_atoi(argv[j]);
+//         j++;
+//         i--;
+//     }
+// }  
 
 void delete_array(int *arr_b, int stack_size)
 {

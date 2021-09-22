@@ -44,9 +44,13 @@ int main(int argc, char *argv[])
     printf("min value = %d\n", stack.a->min);
     printf("mid value = %d\n", stack.a->mid);
 
-    check_number(stack.a);
+    //check_number(stack.a);
+    push_b(stack.a, stack.b);
     ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
-
+    ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
+    push_a(stack.b, stack.a);
+    ft_putstr_fd("array a = ", 1);  print_array(stack.a->arr, stack.a->size);
+    ft_putstr_fd("array b = ", 1);  print_array(stack.b->arr, stack.b->size);
     if (free_me)
     {
         free_argv(argv);

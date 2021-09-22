@@ -51,19 +51,48 @@ void r_rotate(t_arr *stack)
     stack->arr[0] = last;
 }
 
-// void push(t_arr *stack_a, t_arr *stack_b)
-// {
-//     int i;
-//     int j;
-//     int temp;
+void push_b(t_arr *stack_a, t_arr *stack_b)
+{
+    int i;
+    int temp;
 
-//     i = 0;
-//     j = stack_size;
-//     while (arr_b[j] != 0)
-//         j--;
-//     while (arr_a[i] == 0)
-//         i++;
-//     temp = arr_a[i];
-//     arr_a[i] = arr_b[j];
-//     arr_b[j] = temp;
-// }
+    i = 0;
+    temp = stack_a->arr[0];
+    while (i < stack_a->size - 1)
+    {
+        stack_a->arr[i] = stack_a->arr[i + 1];
+        i++;
+    }
+    stack_a->size--;
+    i = stack_b->size;
+    while (i > 0)
+    {
+        stack_b->arr[i] = stack_b->arr[i - 1];
+        i--;
+    }
+    stack_b->arr[0] = temp;
+    stack_b->size++;
+}
+
+void push_a(t_arr *stack_b, t_arr *stack_a)
+{
+    int i;
+    int temp;
+
+    i = 0;
+    temp = stack_b->arr[0];
+    while (i < stack_b->size - 1)
+    {
+        stack_b->arr[i] = stack_b->arr[i + 1];
+        i++;
+    }
+    stack_b->size--;
+    i = stack_a->size;
+    while (i > 0)
+    {
+        stack_a->arr[i] = stack_a->arr[i - 1];
+        i--;
+    }
+    stack_a->arr[0] = temp;
+    stack_a->size++;
+}
