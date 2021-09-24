@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 09:43:00 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 12:13:30 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_arr
 	int		*arr;
 	int		size;
 	int		mid;
-	char	a;
+	int		a;
 }	t_arr;
 
 typedef struct s_stack

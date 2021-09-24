@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 11:56:42 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 12:10:24 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	main(int argc, char *argv[])
 	find_mid_value(stack.a);
 	check_number(&stack);
 	print_array(stack.a->arr, stack.a->size);
-	// if (free_me)
-	// 	free_argv(argv);
+	if (free_me)
+		free_argv(argv);
  	free_stack(&stack);
 	system("leaks executablename");
 }
