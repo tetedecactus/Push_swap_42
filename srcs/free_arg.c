@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:41:58 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/18 13:02:44 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 11:55:19 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_argv(char *argv[])
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (argv)
@@ -23,4 +23,14 @@ void	free_argv(char *argv[])
 			free(argv[i++]);
 		free(argv);
 	}
+}
+
+void 	free_stack(t_stack *stack)
+{
+	free(stack->a->arr);
+	free(stack->a);
+	free(stack->b->arr);
+	free(stack->b);
+	free(stack->t->arr);
+	free(stack->t);
 }

@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:38:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/20 13:03:51 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/23 14:48:32 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,57 +55,26 @@ int	ft_isdigit(int c)
 	return ((c >= '0' && c <= '9' || c == '-'));
 }
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void       ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-    unsigned int nombre;
+	unsigned int	nombre;
 
-    if (nb < 0)
-    {
-        ft_putchar('-');
-        nombre = -nb;
-    }
-    else
-        nombre = nb;
-    if (nombre > 9)
-    {
-        ft_putnbr(nombre / 10);
-        nombre %= 10;
-    }
-    ft_putchar(nombre + '0');
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t			i;
-	unsigned char	*pstr;
-
-	i = 0;
-	pstr = (unsigned char *)s;
-	while (i < n)
+	if (nb < 0)
 	{
-		pstr[i] = 0;
-		i++;
+		ft_putchar('-');
+		nombre = -nb;
 	}
-	s = pstr;
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*b;
-
-	if (!count || !size)
+	else
+		nombre = nb;
+	if (nombre > 9)
 	{
-		count = 1;
-		size = 1;
+		ft_putnbr(nombre / 10);
+		nombre %= 10;
 	}
-	size *= count;
-	b = (void *)malloc(size);
-	if (b)
-		ft_bzero(b, size);
-	return (b);
+	ft_putchar(nombre + '0');
 }

@@ -6,59 +6,47 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:43:33 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/22 13:51:36 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 09:31:29 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int power(int exposant, int data)
+int	find_nb_byte(t_arr *stack)
 {
-    int ret;
+	int		i;
 
-    ret = 1;
-    while (exposant-- > 0)
-    {
-        ret *= data;
-    }
-    return (ret);
+	i = 0;
+	while (stack->size >> i != 0)
+		i++;
+	return (i);
 }
 
-int find_nb_byte(t_arr *stack)
+void	radix_sort(t_arr *stack_a, t_arr *stack_b)
 {
-    int i;
+	int		i;
+	int		j;
+	int		k;
+	int		len;
+	int		nb_bit;
 
-    i = 0;
-    while (stack->size >> i != 0)
-        i++;
-    return (i);
-}    
-
-void radix_sort(t_arr *stack_a, t_arr *stack_b)
-{
-    int i;
-    int j;
-    int k;
-    int len;
-    int nb_bit;
-    
-    i = -1;
-    len = stack_a->size;
-    nb_bit = find_nb_byte(stack_a);
-    while (++i < nb_bit)
-    {
-        j = -1;
-        while (++j < len)
-        {
-            k = stack_a->arr[0];
-            if (((k >> i) & 1) == 1)
-                rotate(stack_a);
-            else
-                push_b(stack_a, stack_b);
-        }
-        while (stack_b->arr[0] != 0) 
-        {
-            push_a(stack_b, stack_a);
-        }
-    }
+	i = -1;
+	len = stack_a->size;
+	nb_bit = find_nb_byte(stack_a);
+	while (++i < nb_bit)
+	{
+		j = -1;
+		while (++j < len)
+		{
+			k = stack_a->arr[0];
+			if (((k >> i) & 1) == 1)
+				rotate(stack_a);
+			else
+				push_b(stack_a, stack_b);
+		}
+		while (stack_b->arr[0] != 0)
+		{
+			push_a(stack_b, stack_a);
+		}
+	}
 }
