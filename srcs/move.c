@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:40:30 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 11:36:56 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 12:42:51 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	push_b(t_arr *stack_a, t_arr *stack_b)
 
 	i = 0;
 	temp = stack_a->arr[0];
-	while (i < stack_a->size - 1)
+	while (i < stack_a->size)
 	{
 		stack_a->arr[i] = stack_a->arr[i + 1];
 		i++;
@@ -88,7 +88,7 @@ void	push_a(t_arr *stack_b, t_arr *stack_a)
 
 	i = 0;
 	temp = stack_b->arr[0];
-	while (i < stack_b->size - 1)
+	while (i < stack_b->size)
 	{
 		stack_b->arr[i] = stack_b->arr[i + 1];
 		i++;

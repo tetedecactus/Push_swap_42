@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:41:58 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 12:14:40 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 13:34:58 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,12 @@ void	free_argv(char *argv[])
 	}
 }
 
-void 	free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-	printf("fuck this shit\n");
 	free(stack->a->arr);
-	free(stack->a);
 	free(stack->b->arr);
+	free(stack->t->og);
+	free(stack->a);
 	free(stack->b);
-	free(stack->t->arr);
 	free(stack->t);
-	printf("yeah fuck this\n");
 }

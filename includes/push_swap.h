@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 12:13:30 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/24 13:31:56 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_arr
 	int		size;
 	int		mid;
 	int		a;
+	int		*og;
 }	t_arr;
 
 typedef struct s_stack
@@ -64,7 +65,7 @@ void	*ft_calloc(size_t count, size_t size);
 
 // Free argument function 
 void	free_argv(char *argv[]);
-void 	free_stack(t_stack *stack);
+void	free_stack(t_stack *stack);
 
 // Quick sort  on array function
 void	quick_sort_array(int arr[], int low, int high);
