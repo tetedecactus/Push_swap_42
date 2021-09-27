@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:38:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/23 14:48:32 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/27 11:46:38 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	i = 0;
 	num = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
-		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')

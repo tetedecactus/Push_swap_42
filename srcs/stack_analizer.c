@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:30:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/23 15:01:01 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/27 11:45:44 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	if_array_is_digit(char **argv, int stack_size)
 		{
 			if (!ft_isdigit(argv[i][j]))
 				return (1);
+			if (argv[i][j] == '-' && argv[i][j + 1] == '-')
+				error_message();
 			j++;
 		}
 		i++;

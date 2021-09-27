@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:36:11 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 12:54:52 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/27 09:56:52 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	array_indexing(t_stack *stack)
 
 	i = 0;
 	index = 1;
+	stack->t = allocate_stack(stack->a->size);
 	copie_stack_a(stack);
 	quick_sort_array(stack->t->arr, 0, stack->t->size - 1);
 	while (i < stack->t->size)
@@ -35,6 +36,8 @@ void	array_indexing(t_stack *stack)
 		index = 1;
 		i++;
 	}
+	free(stack->t->arr);
+	free(stack->t);
 }
 
 void	create_array(char *argv[], t_arr *stack)

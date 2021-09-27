@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_arg.c                                         :+:      :+:    :+:   */
+/*   check_number_of_digit_2.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 11:41:58 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/27 09:56:30 by olabrecq         ###   ########.fr       */
+/*   Created: 2021/09/27 09:58:03 by olabrecq          #+#    #+#             */
+/*   Updated: 2021/09/27 10:53:12 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_argv(char *argv[])
+void	less_than_three_in_b(t_arr *stack)
 {
-	int		i;
-
-	i = 0;
-	if (argv)
-	{
-		while (argv[i])
-			free(argv[i++]);
-		free(argv);
-	}
+	if (stack->arr[1] > stack->arr[0])
+		swap(stack);
 }
 
-void	free_stack(t_stack *stack)
+void	less_than_three_in_a(t_arr *stack)
 {
-	free(stack->a->arr);
-	free(stack->b->arr);
-	free(stack->a);
-	free(stack->b);
+	if (stack->arr[0] > stack->arr[1])
+		swap(stack);
 }
