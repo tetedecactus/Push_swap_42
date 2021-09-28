@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:38:21 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/27 11:46:38 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/28 09:14:59 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_atoi(const char *str)
 
 int	ft_isdigit(int c)
 {
-	return ((c >= '0' && c <= '9' || c == '-'));
+	return ((c >= '0' && c <= '9') || c == '-');
 }
 
 void	ft_putchar(char c)
