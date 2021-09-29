@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:53:15 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 14:44:37 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:43:49 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_arr	*allocate_stack(int stack_size)
 	t_arr	*stack;
 
 	stack = ft_calloc(1, sizeof(t_arr));
-	stack->arr = ft_calloc(stack_size, sizeof(int));
+	stack->arr = ft_calloc(stack_size * 2, sizeof(int));
 	stack->size = stack_size;
 	if (stack->arr == NULL || stack == NULL)
 		return (NULL);

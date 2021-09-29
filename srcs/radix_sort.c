@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:43:33 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 09:31:29 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:53:08 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void	radix_sort(t_arr *stack_a, t_arr *stack_b)
 				push_b(stack_a, stack_b);
 		}
 		while (stack_b->arr[0] != 0)
-		{
 			push_a(stack_b, stack_a);
-		}
 	}
 }

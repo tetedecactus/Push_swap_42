@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:45:26 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/24 13:55:23 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/29 12:07:08 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,27 @@ void	*ft_calloc(size_t count, size_t size)
 	if (b)
 		ft_bzero(b, size);
 	return (b);
+}
+
+long	ft_atol(const char *str)
+{
+	long			num;
+	int				i;
+	long			sign;
+
+	sign = 1;
+	i = 0;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			sign = -1;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	return ((long)(sign * num));
 }

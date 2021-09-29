@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:27:02 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/27 10:53:31 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:18:54 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	error_message(void);
 // Outils function (fonction de ma libft)
 void	ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_isdigit(int c);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
