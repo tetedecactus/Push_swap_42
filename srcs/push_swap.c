@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:45:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/09/29 11:58:26 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:59:30 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	free_me = 0;
 	argv++;
 	if (argc < 2)
-		error_message();
+		return (0);
 	if (argc == 2)
 	{
 		argv = ft_split(*argv, ' ');
